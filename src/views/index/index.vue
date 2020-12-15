@@ -1,11 +1,19 @@
 <template>
-  <hear></hear>
+  <div>
+    <hear></hear>
+    <navs></navs>
+  </div>
 </template>
 
 <script>
 import hear from "../../layout/hear/hear.vue";
+import navs from '../../layout/nav/nav.vue';
+
 export default {
-  components: { hear },
+  components: {
+    hear,
+    navs
+  },
 };
 </script>
 

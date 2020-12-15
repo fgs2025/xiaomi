@@ -1,6 +1,6 @@
 <template>
   <div class="info">
-    <div class="info-nav">登陆</div>
+    <div class="info-nav">登录</div>
     <div class="info-nav">注册</div>
     <div class="info-nav">消息通知</div>
   </div>
