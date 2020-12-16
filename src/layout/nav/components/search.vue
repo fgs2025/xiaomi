@@ -8,7 +8,6 @@
       @mouseleave="border = false"
       @focus="(focus = true), (border = false)"
       @blur="(focus = false), (border = true)"
-      :value="value"
     />
     <div :class="['search-btn', border ? 'border' : '', focus ? 'focus' : '']">
       1
@@ -30,7 +29,6 @@ export default {
       border: false,
       focus: false,
       index: 0,
-      value:''
     };
   },
   mounted() {
@@ -88,6 +86,7 @@ export default {
     border: 1px solid #ff6700;
     box-sizing: border-box;
     background-color: #fff;
+    z-index: 2;
     div {
       line-height: 30px;
       font-size: 12px;

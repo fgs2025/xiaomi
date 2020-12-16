@@ -57,7 +57,7 @@ export default {
     transition: all 0.3s;
     transform-origin: 50% 0;
     transform: rotateX(90deg);
-    z-index: 2;
+    z-index: 3;
     cursor: auto;
     span {
       color: black;
