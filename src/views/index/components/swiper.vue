@@ -45,6 +45,7 @@ export default {
         },
       ],
       index: 0,
+      pd: true,
     };
   },
   mounted() {
@@ -62,22 +63,38 @@ export default {
       }, 4000);
     },
     up() {
-      clearTimeout(this.timer);
-      if (this.index == 0) {
-        this.index = this.img_arr.length - 1;
+      if (this.pd==true) {
+        this.pd = false;
+        clearTimeout(this.timer);
+        if (this.index == 0) {
+          this.index = this.img_arr.length - 1;
+        } else {
+          this.index--;
+        }
+        setTimeout(() => {
+          this.pd = true;
+          this.atuo();
+        }, 800);
       } else {
-        this.index--;
+        return;
       }
-      this.atuo();
     },
     next() {
-      clearTimeout(this.timer);
-      if (this.index == this.img_arr.length - 1) {
-        this.index = 0;
+      if (this.pd==true) {
+        this.pd = false;
+        clearTimeout(this.timer);
+        if (this.index == this.img_arr.length - 1) {
+          this.index = 0;
+        } else {
+          this.index++;
+        }
+        setTimeout(() => {
+          this.pd = true;
+          this.atuo();
+        }, 800);
       } else {
-        this.index++;
+        return;
       }
-      this.atuo();
     },
     dian(index) {
       clearTimeout(this.timer);

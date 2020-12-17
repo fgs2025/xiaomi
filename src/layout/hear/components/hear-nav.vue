@@ -113,7 +113,7 @@ export default {
       transition: all 0.3s;
       transform-origin: 50% 0;
       transform: rotateX(90deg);
-      z-index: 3;
+      z-index: 4;
       img {
         margin-top: 18px;
       }

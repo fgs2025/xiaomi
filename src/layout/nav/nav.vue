@@ -27,7 +27,7 @@
     </div>
     <div
       :class="['list-wrap', transforms ? 'transforms' : '']"
-      @mouseenter="touch()"
+      @mouseenter="touch(index)"
       @mouseleave="leave()"
     >
       <div class="list-box">
@@ -220,7 +220,7 @@ export default {
     touch(index) {
       clearTimeout(this.timers2);
       this.timers = setTimeout(() => {
-        if (this.nav[index].commodity) {
+        if (index <= 6) {
           this.transforms = true;
           this.index = index;
         } else {
