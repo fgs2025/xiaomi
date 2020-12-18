@@ -6,8 +6,11 @@
 <script>
 import index from "./views/index/index.vue";
 export default {
-  components: { index },
+  components: { index ,
+  
+  },
 };
+
 </script>
 <style lang="less">
 @import url(./css/iconfont.css);
