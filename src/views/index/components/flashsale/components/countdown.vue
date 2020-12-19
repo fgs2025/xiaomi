@@ -1,7 +1,7 @@
 <template>
   <div class="bo-left">
     <div class="round">14:00场</div>
-    <div class="img-box"><img src="@/assets/img/下载.png" alt="" /></div>
+    <div class="img-box"><img src="@/assets/img/flashsale/下载.png" alt="" /></div>
     <div class="desc">距离结束还有</div>
     <div class="countdown">
       <span class="time">{{ hours }}</span>

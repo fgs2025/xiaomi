@@ -24,23 +24,23 @@ export default {
     return {
       img_arr: [
         {
-          img: require("@/assets/img/swiper1.jpg"),
+          img: require("@/assets/img/swiper/swiper1.jpg"),
           active: true,
         },
         {
-          img: require("@/assets/img/swiper2.jpg"),
+          img: require("@/assets/img/swiper/swiper2.jpg"),
           active: false,
         },
         {
-          img: require("@/assets/img/swiper3.jpg"),
+          img: require("@/assets/img/swiper/swiper3.jpg"),
           active: false,
         },
         {
-          img: require("@/assets/img/swiper4.jpg"),
+          img: require("@/assets/img/swiper/swiper4.jpg"),
           active: false,
         },
         {
-          img: require("@/assets/img/swiper5.jpg"),
+          img: require("@/assets/img/swiper/swiper5.jpg"),
           active: false,
         },
       ],

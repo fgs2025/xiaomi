@@ -1,13 +1,11 @@
 <template>
   <div class="nav-wrap">
     <div class="wrap">
-      <div
-        class="logo-box"
-        @mouseenter="transform = false"
-        @mouseleave="transform = true"
-      >
-        <div :class="['mi-home', transform ? 'transform' : '']"></div>
-        <div :class="['mi-logo', transform ? 'transform' : '']"></div>
+      <div class="logo-wrap">
+        <div class="logo-box">
+          <div class="mi-home"></div>
+          <div class="mi-logo"></div>
+        </div>
       </div>
       <div class="nav-box">
         <div class="nav-category">
@@ -26,7 +24,7 @@
       <search></search>
     </div>
     <div
-      :class="['list-wrap', transforms ? 'transforms' : '']"
+      :class="['list-wrap', height ? 'height' : '']"
       @mouseenter="touch(index)"
       @mouseleave="leave()"
     >
@@ -58,7 +56,7 @@ export default {
           title: "小米手机",
           commodity: [
             {
-              img: require("@/assets/img/shouji1.png"),
+              img: require("@/assets/img/nav/shouji1.png"),
               title: "小米10至尊纪念版",
               Price: "5299元起",
             },
@@ -68,12 +66,12 @@ export default {
           title: "Redmi红米",
           commodity: [
             {
-              img: require("@/assets/img/shouji1.png"),
+              img: require("@/assets/img/nav/shouji1.png"),
               title: "小米10",
               Price: "5299元起",
             },
             {
-              img: require("@/assets/img/shouji1.png"),
+              img: require("@/assets/img/nav/shouji1.png"),
               title: "小米9纪念版",
               Price: "500元起",
             },
@@ -83,17 +81,17 @@ export default {
           title: "电视",
           commodity: [
             {
-              img: require("@/assets/img/shouji1.png"),
+              img: require("@/assets/img/nav/shouji1.png"),
               title: "小米0",
               Price: "5299元起",
             },
             {
-              img: require("@/assets/img/shouji1.png"),
+              img: require("@/assets/img/nav/shouji1.png"),
               title: "小米纪念版",
               Price: "500元起",
             },
             {
-              img: require("@/assets/img/shouji1.png"),
+              img: require("@/assets/img/nav/shouji1.png"),
               title: "小纪念版",
               Price: "500元起",
             },
@@ -103,22 +101,22 @@ export default {
           title: "笔记本",
           commodity: [
             {
-              img: require("@/assets/img/shouji1.png"),
+              img: require("@/assets/img/nav/shouji1.png"),
               title: "小米10至尊纪念版",
               Price: "5299元起",
             },
             {
-              img: require("@/assets/img/shouji1.png"),
+              img: require("@/assets/img/nav/shouji1.png"),
               title: "小米9至尊纪念版",
               Price: "5000元起",
             },
             {
-              img: require("@/assets/img/shouji1.png"),
+              img: require("@/assets/img/nav/shouji1.png"),
               title: "小米9至尊纪念版",
               Price: "5000元起",
             },
             {
-              img: require("@/assets/img/shouji1.png"),
+              img: require("@/assets/img/nav/shouji1.png"),
               title: "小米9至尊纪念版",
               Price: "5000元起",
             },
@@ -128,27 +126,27 @@ export default {
           title: "家电",
           commodity: [
             {
-              img: require("@/assets/img/shouji1.png"),
+              img: require("@/assets/img/nav/shouji1.png"),
               title: "小米10至尊纪念版",
               Price: "5299元起",
             },
             {
-              img: require("@/assets/img/shouji1.png"),
+              img: require("@/assets/img/nav/shouji1.png"),
               title: "小米9至尊纪念版",
               Price: "5000元起",
             },
             {
-              img: require("@/assets/img/shouji1.png"),
+              img: require("@/assets/img/nav/shouji1.png"),
               title: "小米10至尊纪念版",
               Price: "5299元起",
             },
             {
-              img: require("@/assets/img/shouji1.png"),
+              img: require("@/assets/img/nav/shouji1.png"),
               title: "小米9至尊纪念版",
               Price: "5000元起",
             },
             {
-              img: require("@/assets/img/shouji1.png"),
+              img: require("@/assets/img/nav/shouji1.png"),
               title: "小米9至尊纪念版",
               Price: "5000元起",
             },
@@ -158,32 +156,32 @@ export default {
           title: "路由器",
           commodity: [
             {
-              img: require("@/assets/img/shouji1.png"),
+              img: require("@/assets/img/nav/shouji1.png"),
               title: "小米10至尊纪念版",
               Price: "5299元起",
             },
             {
-              img: require("@/assets/img/shouji1.png"),
+              img: require("@/assets/img/nav/shouji1.png"),
               title: "小米9至尊纪念版",
               Price: "5000元起",
             },
             {
-              img: require("@/assets/img/shouji1.png"),
+              img: require("@/assets/img/nav/shouji1.png"),
               title: "小米10至尊纪念版",
               Price: "5299元起",
             },
             {
-              img: require("@/assets/img/shouji1.png"),
+              img: require("@/assets/img/nav/shouji1.png"),
               title: "小米9至尊纪念版",
               Price: "5000元起",
             },
             {
-              img: require("@/assets/img/shouji1.png"),
+              img: require("@/assets/img/nav/shouji1.png"),
               title: "小米10至尊纪念版",
               Price: "5299元起",
             },
             {
-              img: require("@/assets/img/shouji1.png"),
+              img: require("@/assets/img/nav/shouji1.png"),
               title: "小米9至尊纪念版",
               Price: "5000元起",
             },
@@ -193,12 +191,12 @@ export default {
           title: "智能硬件",
           commodity: [
             {
-              img: require("@/assets/img/shouji1.png"),
+              img: require("@/assets/img/nav/shouji1.png"),
               title: "小米10至尊纪念版",
               Price: "5299元起",
             },
             {
-              img: require("@/assets/img/shouji1.png"),
+              img: require("@/assets/img/nav/shouji1.png"),
               title: "小米9至尊纪念版",
               Price: "5000元起",
             },
@@ -211,8 +209,7 @@ export default {
           title: "社区",
         },
       ],
-      transform: true,
-      transforms: false,
+      height: false,
       index: 0,
     };
   },
@@ -221,17 +218,17 @@ export default {
       clearTimeout(this.timers2);
       this.timers = setTimeout(() => {
         if (index <= 6) {
-          this.transforms = true;
+          this.height = true;
           this.index = index;
         } else {
-          this.transforms = false;
+          this.height = false;
         }
       }, 200);
     },
     leave() {
       clearTimeout(this.timers);
       this.timers2 = setTimeout(() => {
-        this.transforms = false;
+        this.height = false;
       }, 300);
     },
   },
@@ -247,31 +244,35 @@ export default {
     justify-content: space-between;
     width: 1226px;
     margin: 0 auto;
-    .logo-box {
+    .logo-wrap {
       width: 55px;
       height: 55px;
       cursor: pointer;
-      display: flex;
       overflow: hidden;
       background-color: #ff6700;
-      .mi-home {
+      .logo-box {
         width: 100%;
         height: 100%;
-        flex-shrink: 0;
-        background-image: url(../../assets/img/mi-home.png);
-        background-position: center;
+        display: flex;
         transition: all 0.3s;
-      }
-      .mi-logo {
-        width: 100%;
-        height: 100%;
-        flex-shrink: 0;
-        background-image: url(../../assets/img/mi-logo.png);
-        background-position: center;
-        transition: all 0.3s;
-      }
-      .transform {
         transform: translate(-100%);
+        .mi-home {
+          width: 100%;
+          height: 100%;
+          flex-shrink: 0;
+          background-image: url(../../assets/img/logo/mi-home.png);
+          background-position: center;
+        }
+        .mi-logo {
+          width: 100%;
+          height: 100%;
+          flex-shrink: 0;
+          background-image: url(../../assets/img/logo/mi-logo.png);
+          background-position: center;
+        }
+        &:hover {
+          transform: translate(0);
+        }
       }
     }
     .nav-box {
@@ -307,22 +308,16 @@ export default {
         span {
           cursor: pointer;
         }
-        // & + .nav-item {
-        //   margin-left: 15px;
-        // }
       }
     }
   }
   .list-wrap {
     position: absolute;
     width: 100%;
-    // height: 229px;
     height: 0;
     background: #fff;
     box-sizing: border-box;
     overflow: hidden;
-    // transform-origin: 50% 0;
-    // transform: rotateX(90deg);
     transition: height 0.3s;
     z-index: 3;
     .list-box {
@@ -363,8 +358,7 @@ export default {
       }
     }
   }
-  .transforms {
-    // transform: rotateX(0);
+  .height {
     height: 229px;
     border-top: 1px solid #e0e0e0;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.18);

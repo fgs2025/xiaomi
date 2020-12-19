@@ -49,7 +49,7 @@ export default {
           active: false,
           commodity: [
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米10至尊纪念版",
             },
           ],
@@ -60,11 +60,11 @@ export default {
           active: false,
           commodity: [
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米10至尊纪念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米10至尊纪念版",
             },
           ],
@@ -75,15 +75,15 @@ export default {
           active: false,
           commodity: [
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米10至尊纪念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊纪念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊纪念版",
             },
           ],
@@ -94,19 +94,19 @@ export default {
           active: false,
           commodity: [
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米10至尊纪念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊纪念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊纪念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊纪念版",
             },
           ],
@@ -117,35 +117,35 @@ export default {
           active: false,
           commodity: [
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米10至尊纪念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊纪念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊纪念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊纪念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊纪念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊纪念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊纪念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊纪念版",
             },
           ],
@@ -156,15 +156,15 @@ export default {
           active: false,
           commodity: [
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米10至尊纪念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊纪念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊纪念版",
             },
           ],
@@ -175,19 +175,19 @@ export default {
           active: false,
           commodity: [
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米10至尊纪念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊纪念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊纪念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊纪念版",
             },
           ],
@@ -198,23 +198,23 @@ export default {
           active: false,
           commodity: [
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米10至尊纪念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊纪念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊纪念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊纪念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊纪念版",
             },
           ],
@@ -225,35 +225,35 @@ export default {
           active: false,
           commodity: [
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米10至尊纪念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊纪念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊纪念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊纪念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊纪念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊纪念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊纪念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊纪念版",
             },
           ],
@@ -264,91 +264,91 @@ export default {
           active: false,
           commodity: [
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米10至念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米10至念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米10至念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米10至念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米10至念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米10至念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米10至念版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米1尊版",
             },
             {
-              img: require("@/assets/img/fl1.png"),
+              img: require("@/assets/img/nav/fl1.png"),
               c_title: "小米10至念版",
             },
           ],

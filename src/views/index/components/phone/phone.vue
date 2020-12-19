@@ -8,7 +8,12 @@
     </template>
     <template v-slot:left>
       <div class="left">
-        <img src="@/assets/img/pnone1.jpg" width="100%" height="100%" alt="" />
+        <img
+          src="@/assets/img/phone/pnone1.jpg"
+          width="100%"
+          height="100%"
+          alt=""
+        />
       </div>
     </template>
     <template v-slot:right>
@@ -30,49 +35,49 @@ export default {
     return {
       merchandise: [
         {
-          img: require("@/assets/img/shoujibox1.jpg"),
+          img: require("@/assets/img/phone/phoneItem1.jpg"),
           name: "Note 9 Pro",
           introduction: "一亿像素夜景相机，120Hz六档变速高刷屏",
           rate: "1599",
         },
         {
-          img: require("@/assets/img/shoujibox1.jpg"),
+          img: require("@/assets/img/phone/phoneItem1.jpg"),
           name: "小米无线鼠标Le黑色",
           introduction: "简约设计，轻感",
           rate: "29",
         },
         {
-          img: require("@/assets/img/shoujibox1.jpg"),
+          img: require("@/assets/img/phone/phoneItem1.jpg"),
           name: "小米无线鼠标Lie黑色",
           introduction: "简约设，盈握感",
           rate: "290",
         },
         {
-          img: require("@/assets/img/shoujibox1.jpg"),
+          img: require("@/assets/img/phone/phoneItem1.jpg"),
           name: "小米无线鼠标Lite黑色",
           introduction: "简约设计，轻盈握感",
           rate: "294",
         },
         {
-          img: require("@/assets/img/shoujibox1.jpg"),
+          img: require("@/assets/img/phone/phoneItem1.jpg"),
           name: "小米无线鼠标Lite黑色",
           introduction: "简约设计，轻盈握感",
           rate: "295",
         },
         {
-          img: require("@/assets/img/shoujibox1.jpg"),
+          img: require("@/assets/img/phone/phoneItem1.jpg"),
           name: "小米无线鼠标Lite黑色",
           introduction: "简约设计，轻盈握感",
           rate: "298",
         },
         {
-          img: require("@/assets/img/shoujibox1.jpg"),
+          img: require("@/assets/img/phone/phoneItem1.jpg"),
           name: "小米无线鼠标Lit黑色",
           introduction: "简约设计，盈握感",
           rate: "297",
         },
         {
-          img: require("@/assets/img/shoujibox1.jpg"),
+          img: require("@/assets/img/phone/phoneItem1.jpg"),
           name: "小米无线鼠标Lit色",
           introduction: "简约设计轻盈握感",
           rate: "299",

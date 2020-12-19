@@ -1,13 +1,9 @@
 <template>
-  <div
-    class="Shopping "
-    @mouseenter="transform = true"
-    @mouseleave="transform = false"
-  >
+  <div class="Shopping">
     <i class="iconfont icon-xiaomigouwuche"></i>
     购物车
     <span>（0）</span>
-    <div :class="['shop-hov', transform ? 'transform' : '']">
+    <div class="shop-hov">
       <span>购物车中还没有商品，赶紧选购吧！</span>
     </div>
   </div>
@@ -16,9 +12,7 @@
 <script>
 export default {
   data() {
-    return {
-      transform: false,
-    };
+    return {};
   },
 };
 </script>
@@ -42,29 +36,27 @@ export default {
     background-color: #fff;
     color: #ff6700;
   }
+  &:hover .shop-hov {
+    height: 100px;
+  }
   .shop-hov {
     position: absolute;
     width: 316px;
     background-color: #fff;
     top: 40px;
     right: 0;
-    height: 100px;
+    height: 0;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
     transition: all 0.3s;
-    transform-origin: 50% 0;
-    transform: rotateX(90deg);
     z-index: 3;
     cursor: auto;
     span {
       color: black;
     }
-  }
-  .transform {
-    transform: rotateX(0);
   }
 }
 </style>

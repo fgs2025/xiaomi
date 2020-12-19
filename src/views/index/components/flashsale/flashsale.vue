@@ -1,5 +1,5 @@
 <template>
-  <div class="xm-plain-box">
+  <div class="flashsale-box">
     <div class="top">
       <span>小米闪购</span>
       <div class="btn-box">
@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="bottom">
-      <count-down></count-down>
+      <countdown></countdown>
       <div class="right">
         <div
           class="item-box"
@@ -33,111 +33,112 @@
 </template>
 
 <script>
-import countDown from "./count-down.vue";
+import Countdown from "./components/countdown.vue";
+
 export default {
   data() {
     return {
       merchandise: [
         {
-          img: require("@/assets/img/item1.png"),
+          img: require("@/assets/img/flashsale/item1.png"),
           name: "小米无线鼠标Lite黑色",
           introduction: "简约设计，轻盈握感",
           rate: "29",
           del: "39",
         },
         {
-          img: require("@/assets/img/item2.png"),
+          img: require("@/assets/img/flashsale/item2.png"),
           name: "米家手持无线吸尘器1C 白色",
           introduction: "吸力续航双强劲，清洁小怪兽",
           rate: "899",
           del: "999",
         },
         {
-          img: require("@/assets/img/item3.png"),
+          img: require("@/assets/img/flashsale/item3.png"),
           name: "米家全自动波轮洗衣机 5.5kg 灰色",
           introduction: "10挡水位调节，满足日常所需",
           rate: "599",
           del: "799",
         },
         {
-          img: require("@/assets/img/item4.png"),
+          img: require("@/assets/img/flashsale/item4.png"),
           name: "RedmiBook Air 13 I5/16G/512G/2.5K100%sRGB 灰色",
           introduction: "轻盈便携 | 轻松办公",
           rate: "4799",
           del: "5199",
         },
         {
-          img: require("@/assets/img/item5.png"),
+          img: require("@/assets/img/flashsale/item5.png"),
           name: "小米移动电源3 10000mAh超级闪充版（50W）​ 黑色",
           introduction: "大容量，超级闪充",
           rate: "179",
           del: "249",
         },
         {
-          img: require("@/assets/img/item1.png"),
+          img: require("@/assets/img/flashsale/item1.png"),
           name: "小米无线鼠标Lite黑色",
           introduction: "简约设计，轻盈握感",
           rate: "29",
           del: "39",
         },
         {
-          img: require("@/assets/img/item2.png"),
+          img: require("@/assets/img/flashsale/item2.png"),
           name: "米家手持无线吸尘器1C 白色",
           introduction: "吸力续航双强劲，清洁小怪兽",
           rate: "899",
           del: "999",
         },
         {
-          img: require("@/assets/img/item3.png"),
+          img: require("@/assets/img/flashsale/item3.png"),
           name: "米家全自动波轮洗衣机 5.5kg 灰色",
           introduction: "10挡水位调节，满足日常所需",
           rate: "599",
           del: "799",
         },
         {
-          img: require("@/assets/img/item4.png"),
+          img: require("@/assets/img/flashsale/item4.png"),
           name: "RedmiBook Air 13 I5/16G/512G/2.5K100%sRGB 灰色",
           introduction: "轻盈便携 | 轻松办公",
           rate: "4799",
           del: "5199",
         },
         {
-          img: require("@/assets/img/item1.png"),
+          img: require("@/assets/img/flashsale/item1.png"),
           name: "小米无线鼠标Lite黑色",
           introduction: "简约设计，轻盈握感",
           rate: "29",
           del: "39",
         },
         {
-          img: require("@/assets/img/item2.png"),
+          img: require("@/assets/img/flashsale/item2.png"),
           name: "米家手持无线吸尘器1C 白色",
           introduction: "吸力续航双强劲，清洁小怪兽",
           rate: "899",
           del: "999",
         },
         {
-          img: require("@/assets/img/item3.png"),
+          img: require("@/assets/img/flashsale/item3.png"),
           name: "米家全自动波轮洗衣机 5.5kg 灰色",
           introduction: "10挡水位调节，满足日常所需",
           rate: "599",
           del: "799",
         },
         {
-          img: require("@/assets/img/item4.png"),
+          img: require("@/assets/img/flashsale/item4.png"),
           name: "RedmiBook Air 13 I5/16G/512G/2.5K100%sRGB 灰色",
           introduction: "轻盈便携 | 轻松办公",
           rate: "4799",
           del: "5199",
         },
         {
-          img: require("@/assets/img/item2.png"),
+          img: require("@/assets/img/flashsale/item2.png"),
           name: "米家手持无线吸尘器1C 白色",
           introduction: "吸力续航双强劲，清洁小怪兽",
           rate: "899",
           del: "999",
         },
         {
-          img: require("@/assets/img/item3.png"),
+          img: require("@/assets/img/flashsale/item3.png"),
           name: "米家全自动波轮洗衣机 5.5kg 灰色",
           introduction: "10挡水位调节，满足日常所需",
           rate: "599",
@@ -217,12 +218,12 @@ export default {
       }
     },
   },
-  components: { countDown },
+  components: { Countdown },
 };
 </script>
 
 <style lang="less" scoped>
-.xm-plain-box {
+.flashsale-box {
   width: 1226px;
   margin: 0 auto;
   .top {

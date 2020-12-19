@@ -3,38 +3,36 @@
     <hear></hear>
     <navs></navs>
     <swiper></swiper>
-    <home-hero-sub></home-hero-sub>
+    <channel></channel>
     <div class="main">
-      <xm-plain-box></xm-plain-box>
-      <advertisementone></advertisementone>
-      <!-- <home-brick-box></home-brick-box> -->
+      <flashsale></flashsale>
+      <advertisement-1></advertisement-1>
       <phone></phone>
-      <advertisementtwo></advertisementtwo>
+      <advertisement-2></advertisement-2>
     </div>
   </div>
 </template>
 
 <script>
-// import HomeBrickBox from '../../components/home-brick-box.vue';
 import hear from "../../layout/hear/hear.vue";
 import navs from "../../layout/nav/nav.vue";
-import Advertisementone from "./components/advertisementone.vue";
-import Advertisementtwo from './components/advertisementtwo.vue';
-import HomeHeroSub from "./components/home-hero-sub.vue";
-import Phone from "./components/phone.vue";
-import Swiper from "./components/swiper.vue";
-import XmPlainBox from "./components/xm-plain-box.vue";
+import Advertisement1 from "./components/advertisement/advertisement1.vue";
+import Advertisement2 from "./components/advertisement/advertisement2.vue";
+import Channel from './components/channel/channel.vue';
+import Flashsale from "./components/flashsale/flashsale.vue";
+import Phone from "./components/phone/phone.vue";
+import Swiper from "./components/swiper/swiper.vue";
+
 export default {
   components: {
     hear,
     navs,
+    Advertisement1,
+    Advertisement2,
     Swiper,
-    HomeHeroSub,
-    XmPlainBox,
-    Advertisementone,
     Phone,
-    Advertisementtwo,
-    // HomeBrickBox,
+    Flashsale,
+    Channel,
   },
 };
 </script>

@@ -1,7 +1,7 @@
 <template>
   <advertisement>
     <template v-slot:img-box>
-      <img src="@/assets/img/dgg1.jpg" alt="" />
+      <img src="@/assets/img/advertisement/advertisement2.jpg" alt="" />
     </template>
   </advertisement>
 </template>
