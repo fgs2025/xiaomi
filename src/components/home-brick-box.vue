@@ -45,7 +45,7 @@ export default {};
       width: 234px;
     }
     .right-box {
-      margin-left: 14px;
+      // margin-left: 14px;
       flex: 1;
     }
   }

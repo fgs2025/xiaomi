@@ -4,7 +4,9 @@
       <div class="title">手机</div>
     </template>
     <template v-slot:more>
-      <div class="more">查看全部></div>
+      <div class="more">
+        查看全部<i class="iconfont icon-mjiantou-copy"></i>
+      </div>
     </template>
     <template v-slot:left>
       <div class="left">
@@ -95,8 +97,26 @@ export default {
 .more {
   cursor: pointer;
   transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  i {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #b0b0b0;
+    border-radius: 16px;
+    color: #fff;
+    padding: 4px;
+    font-size: 12px;
+    box-sizing: border-box;
+    transition: all 0.3s;
+    margin-left: 5px;
+  }
   &:hover {
     color: #ff6700;
+  }
+  &:hover i {
+    background-color: #ff6700;
   }
 }
 .left {
@@ -111,8 +131,8 @@ export default {
 .right {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: space-between;
+  // justify-content: space-between;
+  // align-content: space-between;
   height: 100%;
   .item {
     width: 234px;
@@ -123,6 +143,8 @@ export default {
     cursor: pointer;
     box-sizing: border-box;
     transition: all 0.3s;
+    margin-left: 14px;
+    margin-bottom: 14px;
     &:hover {
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
       transform: translate3d(0, -2px, 0);

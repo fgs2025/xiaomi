@@ -4,10 +4,10 @@
       <span>小米闪购</span>
       <div class="btn-box">
         <div :class="['left-btn', l_btn ? 'action' : '']" @click="page()">
-          &lt;
+          <i class="iconfont icon-zuo1"></i>
         </div>
         <div :class="['right-btn', r_btn ? 'action' : '']" @click="next()">
-          &gt;
+          <i class="iconfont icon-mjiantou-copy"></i>
         </div>
       </div>
     </div>
@@ -146,13 +146,13 @@ export default {
         },
       ],
       translatex: 0, //移动
-      distance: 992, //每次移动的距离,4个div的框宽
+      distance: 248 * 4, //每次移动的距离,4个div的宽,248为每个div234的宽度加14的边距
       l_btn: false, //左边按钮
       r_btn: true, //右边按钮
     };
   },
   mounted() {
-    this.width = +(248 * this.merchandise.length - 248 * 4); //总共可以移动的距离
+    this.width = 248 * this.merchandise.length - this.distance; //总共可以移动的距离
     this.auto();
   },
   methods: {
@@ -240,16 +240,17 @@ export default {
       .right-btn {
         width: 36px;
         height: 24px;
-        text-align: center;
-        line-height: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         border: 1px solid #e0e0e0;
         font-size: 24px;
         font-weight: 800;
-        color: #ccc;
+        color: #e0e0e0;
         box-sizing: border-box;
       }
       .action {
-        color: black;
+        color: #b0b0b0;
         cursor: pointer;
       }
     }

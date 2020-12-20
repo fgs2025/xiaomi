@@ -5,8 +5,10 @@
       backgroundImage: `url(${img_arr[index].img})`,
     }"
   >
-    <div class="letf-btn" @click="up()">&lt;</div>
-    <div class="right-btn" @click="next()">&gt;</div>
+    <div class="letf-btn" @click="up()"><i class="iconfont icon-zuo1"></i></div>
+    <div class="right-btn" @click="next()">
+      <i class="iconfont icon-mjiantou-copy"></i>
+    </div>
     <div class="dian-box">
       <div
         :class="['dian', item.active ? 'active' : '']"
@@ -63,7 +65,7 @@ export default {
       }, 4000);
     },
     up() {
-      if (this.pd==true) {
+      if (this.pd == true) {
         this.pd = false;
         clearTimeout(this.timer);
         if (this.index == 0) {
@@ -80,7 +82,7 @@ export default {
       }
     },
     next() {
-      if (this.pd==true) {
+      if (this.pd == true) {
         this.pd = false;
         clearTimeout(this.timer);
         if (this.index == this.img_arr.length - 1) {
@@ -135,6 +137,9 @@ export default {
     &:hover {
       background-color: rgba(112, 88, 56, 0.5);
       color: #fff;
+    }
+    i{
+      font-size: 40px;
     }
   }
   .letf-btn {

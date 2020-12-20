@@ -1,7 +1,11 @@
 <template>
   <div class="bo-left">
-    <div class="round">14:00场</div>
-    <div class="img-box"><img src="@/assets/img/flashsale/下载.png" alt="" /></div>
+    <div class="round">
+      {{ time_arr.start_hour }}:{{ time_arr.start_minute }}场
+    </div>
+    <div class="img-box">
+      <img src="@/assets/img/flashsale/下载.png" alt="" />
+    </div>
     <div class="desc">距离结束还有</div>
     <div class="countdown">
       <span class="time">{{ hours }}</span>
@@ -17,6 +21,10 @@
 export default {
   data() {
     return {
+      time_arr: {
+        start_hour: "10",
+        start_minute: "00",
+      },
       hour: 1,
       minute: 1,
       second: 60,
