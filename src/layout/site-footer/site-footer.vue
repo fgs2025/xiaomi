@@ -113,10 +113,10 @@ export default {};
       .link {
         font-size: 12px;
         margin-top: 10px;
-        cursor: pointer;
         span {
           color: #757575;
           transition: all 0.3s;
+          cursor: pointer;
           &:hover {
             color: #ff6700;
           }
