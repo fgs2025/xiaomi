@@ -1,5 +1,6 @@
 <template>
   <div>
+    <index></index>
     <banner></banner>
     <hear></hear>
     <navs></navs>
@@ -37,7 +38,7 @@ import HomeVideo from "./components/home-video/home-video.vue";
 import Intelligent from "./components/intelligent/intelligent.vue";
 import Phone from "./components/phone/phone.vue";
 import Swiper from "./components/swiper/swiper.vue";
-
+import index from "../../layout/right-nav/index.vue";
 export default {
   components: {
     hear,
@@ -54,6 +55,7 @@ export default {
     Collocation,
     HomeVideo,
     siteFooter,
+    index
   },
 };
 </script>

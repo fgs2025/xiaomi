@@ -10,7 +10,7 @@
       @blur="(focus = false), (border = true)"
     />
     <div :class="['search-btn', border ? 'border' : '', focus ? 'focus' : '']">
-      1
+      <i class="iconfont icon-sousuo"></i>
     </div>
     <div class="history" v-if="focus">
       <div v-for="(item, index) in history" :key="index">
@@ -68,6 +68,10 @@ export default {
     border-left: transparent;
     cursor: pointer;
     transition: all 0.3s;
+    i{
+      font-weight: 800;
+      font-size: 20px;
+    }
     &:hover {
       background-color: #ff6700;
       color: #fff;

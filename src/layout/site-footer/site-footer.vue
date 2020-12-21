@@ -1,48 +1,16 @@
 <template>
   <div class="site-footer-wrap">
     <div class="service">
-      <div>预约维修服务</div>
-      <div>7天无理由退货</div>
-      <div>15天免费换货</div>
-      <div>满99元包邮</div>
-      <div>520余售后网点</div>
+      <div v-for="(item, index) in service" :key="index">
+        <span>{{ item.title }}</span>
+      </div>
     </div>
     <div class="links">
-      <div class="col-links">
-        <div class="title">帮助中心</div>
-        <div class="link"><span>账号管理</span></div>
-        <div class="link"><span>购物指南</span></div>
-        <div class="link"><span>订单操作</span></div>
-      </div>
-      <div class="col-links">
-        <div class="title">帮助中心</div>
-        <div class="link"><span>账号管理</span></div>
-        <div class="link"><span>购物指南</span></div>
-        <div class="link"><span>订单操作</span></div>
-      </div>
-      <div class="col-links">
-        <div class="title">帮助中心</div>
-        <div class="link"><span>账号管理</span></div>
-        <div class="link"><span>购物指南</span></div>
-        <div class="link"><span>订单操作</span></div>
-      </div>
-      <div class="col-links">
-        <div class="title">帮助中心</div>
-        <div class="link"><span>账号管理</span></div>
-        <div class="link"><span>购物指南</span></div>
-        <div class="link"><span>订单操作</span></div>
-      </div>
-      <div class="col-links">
-        <div class="title">帮助中心</div>
-        <div class="link"><span>账号管理</span></div>
-        <div class="link"><span>购物指南</span></div>
-        <div class="link"><span>订单操作</span></div>
-      </div>
-      <div class="col-links">
-        <div class="title">帮助中心</div>
-        <div class="link"><span>账号管理</span></div>
-        <div class="link"><span>购物指南</span></div>
-        <div class="link"><span>订单操作</span></div>
+      <div class="col-links" v-for="(item, index) in colLinks" :key="index">
+        <div class="title">{{ item.title }}</div>
+        <div class="link" v-for="(ite, ind) in item.link_arr" :key="ind">
+          <span>{{ ite.link_title }}</span>
+        </div>
       </div>
       <div class="col-contact">
         <div class="phone">400-100-5678</div>
@@ -77,7 +45,124 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      service: [
+        {
+          title: "预约维修服务",
+        },
+        {
+          title: "7天无理由退货",
+        },
+        {
+          title: "15天免费换货",
+        },
+        {
+          title: "满99元包邮",
+        },
+        {
+          title: "520余售后网点",
+        },
+      ],
+      colLinks: [
+        {
+          title: "帮助中心",
+          link_arr: [
+            {
+              link_title: "账号管理",
+            },
+            {
+              link_title: "购物指南",
+            },
+            {
+              link_title: "订单操作",
+            },
+          ],
+        },
+        {
+          title: "服务支持",
+          link_arr: [
+            {
+              link_title: "售后政策",
+            },
+            {
+              link_title: "自助服务",
+            },
+            {
+              link_title: "相关下载",
+            },
+          ],
+        },
+        {
+          title: "线下门店",
+          link_arr: [
+            {
+              link_title: "小米之家",
+            },
+            {
+              link_title: "服务网店",
+            },
+            {
+              link_title: "授权体验店",
+            },
+          ],
+        },
+        {
+          title: "关于小米",
+          link_arr: [
+            {
+              link_title: "了解小米",
+            },
+            {
+              link_title: "加入小米",
+            },
+            {
+              link_title: "投资者关系",
+            },
+            {
+              link_title: "企业社会责任",
+            },
+            {
+              link_title: "廉洁举报",
+            },
+          ],
+        },
+        {
+          title: "关于我们",
+          link_arr: [
+            {
+              link_title: "新浪微博",
+            },
+            {
+              link_title: "官方微信",
+            },
+            {
+              link_title: "联系我们",
+            },
+            {
+              link_title: "公益基金会",
+            },
+          ],
+        },
+        {
+          title: "特色服务",
+          link_arr: [
+            {
+              link_title: "F码通道",
+            },
+            {
+              link_title: "礼物码",
+            },
+            {
+              link_title: "防伪查询",
+            },
+          ],
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style lang="less" scoped>
@@ -91,13 +176,16 @@ export default {};
     div {
       flex: 1;
       text-align: center;
-      cursor: pointer;
-      transition: all 0.3s;
+
+      span {
+        cursor: pointer;
+        transition: all 0.3s;
+        &:hover {
+          color: #ff6700;
+        }
+      }
       & + div {
         border-left: 1px solid #e0e0e0;
-      }
-      &:hover {
-        color: #ff6700;
       }
     }
   }

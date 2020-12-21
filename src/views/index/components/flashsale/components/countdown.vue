@@ -39,7 +39,7 @@ export default {
       this.trmer = setTimeout(() => {
         this.second--;
         this.auto();
-      }, 1000);
+      },1000);
     },
   },
   computed: {

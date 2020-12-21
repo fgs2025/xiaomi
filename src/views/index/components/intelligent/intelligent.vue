@@ -67,7 +67,7 @@
               浏览更多
               <p>热门</p>
             </div>
-            <i>1</i>
+             <i class="iconfont icon-youjiantou"></i>
           </div>
         </div>
       </div>
@@ -374,13 +374,17 @@ export default {
           color: #757575;
         }
       }
-      i {
-        width: 48px;
-        height: 48px;
-        line-height: 46px;
-        border: 1px solid #ff6700;
-        border-radius: 50%;
-        text-align: center;
+      // i {
+      //   width: 48px;
+      //   height: 48px;
+      //   line-height: 46px;
+      //   border: 1px solid #ff6700;
+      //   border-radius: 50%;
+      //   text-align: center;
+      // }
+       i {
+        color: #ff6700;
+        font-size: 48px;
       }
       &:hover {
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
