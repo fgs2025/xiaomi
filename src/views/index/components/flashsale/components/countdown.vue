@@ -25,9 +25,9 @@ export default {
         start_hour: "10",
         start_minute: "00",
       },
-      hour: 1,
-      minute: 1,
-      second: 60,
+      hour: 1,//时
+      minute: 1,//分
+      second: 60,//秒
       trmer: null,
     };
   },
@@ -39,7 +39,7 @@ export default {
       this.trmer = setTimeout(() => {
         this.second--;
         this.auto();
-      },1000);
+      }, 1000);
     },
   },
   computed: {

@@ -55,7 +55,7 @@ export default {
     Collocation,
     HomeVideo,
     siteFooter,
-    index
+    index,
   },
 };
 </script>
