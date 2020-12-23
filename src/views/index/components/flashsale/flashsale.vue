@@ -39,13 +39,7 @@ export default {
   data() {
     return {
       merchandise: [
-        {
-          img: require("@/assets/img/flashsale/item1.png"),
-          name: "小米无线鼠标Lite黑色",
-          introduction: "简约设计，轻盈握感",
-          rate: "29",
-          del: "39",
-        },
+
         {
           img: require("@/assets/img/flashsale/item2.png"),
           name: "米家手持无线吸尘器1C 白色",
