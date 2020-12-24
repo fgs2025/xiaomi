@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="right">
-      <div v-for="(item, index) in gg" :key="index">
+      <div v-for="(item, index) in gg" :key="index" >
         <img :src="item" alt="" width="100%" height="100%" />
       </div>
     </div>
@@ -52,6 +52,14 @@ export default {
         require("@/assets/img/channel/gg3.jpg"),
       ],
     };
+  },
+  methods: {
+    // info(index){
+    //   this.$router.push({
+    //     name:'login',
+    //     query:{img:this.gg[index]}
+    //   })
+    // }
   },
 };
 </script>

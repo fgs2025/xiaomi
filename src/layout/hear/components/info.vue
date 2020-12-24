@@ -1,6 +1,8 @@
 <template>
   <div class="info">
-    <div class="info-nav">登录</div>
+    <div class="info-nav">
+      <router-link to="/login"> 登录</router-link>
+    </div>
     <div class="info-nav">注册</div>
     <div class="info-nav">消息通知</div>
   </div>

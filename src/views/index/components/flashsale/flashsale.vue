@@ -18,7 +18,12 @@
           class="item-box"
           :style="{ transform: `translatex(-${translatex}px)` }"
         >
-          <div class="item" v-for="(item, index) in merchandise" :key="index">
+          <div
+            class="item"
+            v-for="(item, index) in merchandise"
+            :key="index"
+            @click="info(index)"
+          >
             <img :src="item.img" alt="" />
             <div class="name">{{ item.name }}</div>
             <div class="introduction">{{ item.introduction }}</div>
@@ -39,7 +44,6 @@ export default {
   data() {
     return {
       merchandise: [
-
         {
           img: require("@/assets/img/flashsale/item2.png"),
           name: "米家手持无线吸尘器1C 白色",
@@ -193,6 +197,13 @@ export default {
       } else {
         return;
       }
+    },
+
+    info(index) {
+      this.$router.push({
+        path: "/details",
+        query: { sj: this.merchandise[index] },
+      });
     },
   },
   watch: {

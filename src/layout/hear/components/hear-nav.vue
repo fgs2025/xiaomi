@@ -5,7 +5,9 @@
       v-for="(item, index) in nav"
       :key="index"
     >
-      {{ item.title }}
+      <router-link :to="item.link">
+        {{ item.title }}
+      </router-link>
       <div class="nav-hov" v-if="item.hov">
         <img :src="item.img" alt="" width="90" height="90" />
         <span>{{ item.span }}</span>
@@ -21,46 +23,59 @@ export default {
       nav: [
         {
           title: "小米商城",
+          link: "/",
         },
         {
           title: "MIUI",
+           link: "/",
         },
         {
           title: "loT",
+           link: "/",
         },
         {
           title: "云服务",
+           link: "/",
         },
         {
           title: "天星数科",
+           link: "/",
         },
         {
           title: "有品",
+           link: "/",
         },
 
         {
           title: "小爱开放平台",
+           link: "/",
         },
         {
           title: "企业团购",
+           link: "/",
         },
         {
           title: "资质证照",
+           link: "/",
         },
         {
           title: "协议规则",
+           link: "/",
         },
         {
           title: "下载app",
+           link: "/",
           hov: true,
           img: require("@/assets/img/hear/download.png"),
           span: "小米商城APP",
         },
         {
           title: "智能生活",
+           link: "/",
         },
         {
           title: "Select Location",
+           link: "/",
         },
       ],
     };

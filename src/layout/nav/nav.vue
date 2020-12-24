@@ -8,7 +8,7 @@
         </div>
       </div>
       <div class="nav-box">
-        <div class="nav-category">
+        <div class="nav-category" @mouseenter="displays()" @mouseleave="nn()">
           <span v-if="this.$route.path != '/'">全部商品分类</span>
         </div>
         <div
@@ -40,7 +40,7 @@
         </div>
       </div>
     </div>
-    <category></category>
+    <category v-if="display"></category>
   </div>
 </template>
 
@@ -211,9 +211,27 @@ export default {
       ],
       height: false,
       index: 0,
+      display: true,
     };
   },
+  mounted() {
+    if (this.$route.path == "/") {
+      this.display = true;
+    } else {
+      this.display = false;
+    }
+  },
   methods: {
+    displays() {
+      if(this.display!=true){
+        this.display=true
+      }
+    },
+    nn(){
+      if(this.display==true){
+        this.display=false
+      }
+    },
     touch(index) {
       clearTimeout(this.timers2);
       this.timers = setTimeout(() => {
@@ -322,11 +340,12 @@ export default {
     z-index: 3;
     .list-box {
       width: 1226px;
-      height: 100%;
+      // height: 100%;
       display: flex;
       align-items: center;
       margin: 0 auto;
       padding: 20px 0;
+      // overflow: hidden;
       box-sizing: border-box;
       .item {
         width: 180px;

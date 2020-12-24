@@ -1,7 +1,7 @@
 <template>
   <div class="category-wrap">
     <div class="category-box">
-      <div class="category-left">
+      <div class="category-left" >
         <div
           :class="['item-title', item.active ? 'active' : '']"
           v-for="(item, index) in category_arr"
@@ -14,8 +14,8 @@
             <span>{{ item.titles }}</span>
           </div>
           <!-- <span> -->
-            <i class="iconfont icon-mjiantou-copy"></i> 
-            <!-- </span> -->
+          <i class="iconfont icon-mjiantou-copy"></i>
+          <!-- </span> -->
         </div>
       </div>
       <div
