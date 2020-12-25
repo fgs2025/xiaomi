@@ -8,7 +8,7 @@
         </div>
       </div>
       <div class="nav-box">
-        <div class="nav-category" @mouseenter="displays()" @mouseleave="nn()">
+        <div class="nav-category" @mouseenter="diss" @mouseleave="disx">
           <span v-if="this.$route.path != '/'">全部商品分类</span>
         </div>
         <div
@@ -16,7 +16,7 @@
           v-for="(item, index) in nav"
           :key="index"
           @mouseenter="touch(index)"
-          @mouseleave="leave()"
+          @mouseleave="leave"
         >
           <span>{{ item.title }}</span>
         </div>
@@ -40,7 +40,7 @@
         </div>
       </div>
     </div>
-    <category v-if="display"></category>
+    <category ref="category"></category>
   </div>
 </template>
 
@@ -211,26 +211,17 @@ export default {
       ],
       height: false,
       index: 0,
-      display: true,
     };
   },
   mounted() {
-    if (this.$route.path == "/") {
-      this.display = true;
-    } else {
-      this.display = false;
-    }
+    
   },
   methods: {
-    displays() {
-      if(this.display!=true){
-        this.display=true
-      }
+    diss() {
+      this.$refs["category"].dis = true;
     },
-    nn(){
-      if(this.display==true){
-        this.display=false
-      }
+    disx() {
+      this.$refs["category"].dis = false;
     },
     touch(index) {
       clearTimeout(this.timers2);

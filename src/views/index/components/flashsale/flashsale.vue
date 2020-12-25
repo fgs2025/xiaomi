@@ -22,7 +22,7 @@
             class="item"
             v-for="(item, index) in merchandise"
             :key="index"
-            @click="info(index)"
+        
           >
             <img :src="item.img" alt="" />
             <div class="name">{{ item.name }}</div>
@@ -199,12 +199,12 @@ export default {
       }
     },
 
-    info(index) {
-      this.$router.push({
-        path: "/details",
-        query: { sj: this.merchandise[index] },
-      });
-    },
+    // info(index) {
+    //   this.$router.push({
+    //     path: "/details",
+    //     query: { sj: this.merchandise[index] },
+    //   });
+    // },
   },
   watch: {
     translatex(val) {

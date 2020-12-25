@@ -1,28 +1,27 @@
 <template>
-  <div class="category-wrap">
+  <div class="category-wrap" v-if="dis">
     <div class="category-box">
-      <div class="category-left" >
+      <div class="category-left" @mouseenter="diss" @mouseleave="disx">
         <div
           :class="['item-title', item.active ? 'active' : '']"
           v-for="(item, index) in category_arr"
           :key="index"
           @mouseenter="display(index)"
-          @mouseleave="hide()"
+          @mouseleave="hide"
         >
           <div>
             <span>{{ item.title }}</span>
             <span>{{ item.titles }}</span>
           </div>
-          <!-- <span> -->
           <i class="iconfont icon-mjiantou-copy"></i>
-          <!-- </span> -->
         </div>
       </div>
+
       <div
         class="category-right"
         v-if="show"
         @mouseenter="display(index)"
-        @mouseleave="hide()"
+        @mouseleave="hide"
         :style="{
           width: widths + 'px',
         }"
@@ -360,10 +359,25 @@ export default {
       index: 0,
       width: 265,
       widths: 0,
+      dis: false,
     };
   },
+  mounted() {
+    if (this.$route.path == "/") {
+      this.dis = true;
+    } else {
+      this.dis = false;
+    }
+  },
   methods: {
+    diss() {
+      this.dis = true;
+    },
+    disx() {
+      this.dis = false;
+    },
     display(index) {
+      this.dis = true;
       this.show = true;
       this.index = index;
       this.category_arr.forEach((row) => (row.active = false));
@@ -381,6 +395,14 @@ export default {
     hide() {
       this.category_arr.forEach((row) => (row.active = false));
       this.show = false;
+      this.dis = false;
+    },
+  },
+  watch: {
+    dis(val) {
+      if (this.$route.path == "/") {
+        this.dis = true;
+      }
     },
   },
 };
