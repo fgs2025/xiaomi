@@ -400,6 +400,7 @@ export default {
   },
   watch: {
     dis(val) {
+      console.log(val);
       if (this.$route.path == "/") {
         this.dis = true;
       }

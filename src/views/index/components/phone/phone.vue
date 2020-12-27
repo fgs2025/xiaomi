@@ -26,7 +26,7 @@
           :key="index"
           @click="info(index)"
         >
-          <img :src="item.img[0]" alt="" />
+          <img :src="item.img" alt="" />
           <div class="name">{{ item.name }}</div>
           <div class="introduction">{{ item.introduction }}</div>
           <div class="rate">{{ item.rate }}元起</div>
@@ -42,7 +42,7 @@ export default {
     return {
       merchandise: [
         {
-          img: [require("@/assets/img/phone/phoneItem1.jpg")],
+          img: require("@/assets/img/phone/phoneItem1.jpg"),
           name: "Note 9 Pro",
           introduction: "一亿像素夜景相机，120Hz六档变速高刷屏",
           rate: "1599",
