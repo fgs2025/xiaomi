@@ -5,7 +5,7 @@
     <div class="xm-product-box">
       <div class="xm-product">
         <div class="product-left">
-          <span class="title">{{this.$route.query.sj.name}}</span>
+          <span class="title">{{ this.$route.query.sj.name }}</span>
           <div class="con">
             <span>|</span>
             <span class="txt">小米10至尊纪念版</span>
@@ -43,19 +43,180 @@
           <div class="dian"></div>
         </div>
       </div>
+      <div class="product-con">
+        <div class="top-title">小米11</div>
+        <div class="sale-desc">
+          <span
+            >「1月1号0点开始预售付尾款及首卖；最高享12期免息；标配不提供充电器和数据线，如需请选择套装版」</span
+          >
+          骁龙888｜2K AMOLED 四曲面柔性屏｜1亿像素三摄｜时尚轻薄机身｜55W
+          有线闪充｜50W 无线闪充｜10W
+          无线反充｜LPDDR5｜WiFi6（增强版）｜视频「超级夜景」｜哈曼卡顿音频认证｜立体声双扬声器
+        </div>
+        <p class="company-info">小米自营</p>
+        <div class="price-info">1599元</div>
+        <div class="line"></div>
+        <div class="address-box">
+          <div class="icon-box"><i class="iconfont icon-sousuo"></i></div>
+          <div class="address-con">
+            <div class="top">
+              <span>广东</span>
+              <span>湛江市</span>
+              <span>雷州市</span>
+              <span>乌石镇</span>
+              <span class="edit">修改</span>
+            </div>
+            <div class="desc">有现货</div>
+          </div>
+        </div>
+        <div class="buy-option">
+          <div class="buy-box-child">
+            <div class="title">选择版本</div>
+            <div class="clearfix-box">
+              <div class="active">6GB+128GB</div>
+              <div>8GB+128GB</div>
+              <div>8GB+256GB</div>
+            </div>
+          </div>
+          <div class="buy-box-child">
+            <div class="title">选择颜色</div>
+            <div class="clearfix-box">
+              <div class="active">静默星空</div>
+              <div>碧海星辰</div>
+              <div>湖光秋色</div>
+            </div>
+          </div>
+          <div class="buy-box-child">
+            <div class="title">选择套餐</div>
+            <div class="clearfix-box">
+              <div class="active">标准版</div>
+              <div>手机保护壳套餐</div>
+            </div>
+          </div>
+        </div>
+        <div class="service-box">
+          <div class="service-item-box">
+            <div class="top">
+              <span class="title">选择小米提供的意外保护</span>
+              <span class="link">了解意外保护></span>
+            </div>
+            <div class="item active">
+              <div class="btn">
+                <span>√</span>
+              </div>
+              <img
+                src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1605594163.22542401.png"
+                alt=""
+              />
+              <div class="txt">
+                <div class="title">意外保障服务 <span>179元</span></div>
+                <div class="desc">手机意外碎屏/进水/碾压等损坏</div>
+                <div class="buttom">
+                  <div class="agreement-box">
+                    <div class="icon">
+                      <span>√</span>
+                    </div>
+                    <div class="text">
+                      我已阅读
+                      <span>服务条款</span>
+                      <span class="shu">|</span>
+                      <span>常见问题</span>
+                    </div>
+                  </div>
+                  <span class="price">179元</span>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="btn">
+                <span>√</span>
+              </div>
+              <img
+                src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1605594163.22542401.png"
+                alt=""
+              />
+              <div class="txt">
+                <div class="title">碎屏保障服务 <span>已省20元</span></div>
+                <div class="desc">手机意外碎屏/进水/碾压等损坏</div>
+                <div class="buttom">
+                  <div class="agreement-box">
+                    <div class="icon">
+                      <span>√</span>
+                    </div>
+                    <div class="text">
+                      我已阅读
+                      <span>服务条款</span>
+                      <span class="shu">|</span>
+                      <span>常见问题</span>
+                    </div>
+                  </div>
+                  <span class="price">179元</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="service-item-box">
+            <div class="top">
+              <span class="title">选择小米提供的延长保修</span>
+              <span class="link">了解延长保修></span>
+            </div>
+            <div class="item ">
+              <div class="btn">
+                <span>√</span>
+              </div>
+              <img
+                src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1605594163.22542401.png"
+                alt=""
+              />
+              <div class="txt">
+                <div class="title ">延长保修服务 <span>已省10元</span></div>
+                <div class="desc">厂保延一年，性能故障免费维修</div>
+                <div class="buttom">
+                  <div class="agreement-box">
+                    <div class="icon ">
+                      <span>√</span>
+                    </div>
+                    <div class="text">
+                      我已阅读
+                      <span>服务条款</span>
+                      <span class="shu">|</span>
+                      <span>常见问题</span>
+                    </div>
+                  </div>
+                  <span class="price">39元</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="selected-list">
+          <div class="merchandise-box">
+            <span class="merchandise-name"
+              >Redmi Note 9 Pro 5G 8GB+128G 静默星空</span
+            >
+            <span class="merchandise-rate">1799元</span>
+          </div>
+          <div class="total-price">总计：1805元</div>
+        </div>
+        <div class="btn-box">
+          <div class="sale-btn">加入购物车</div>
+          <div class="btn-like">喜欢</div>
+        </div>
+      </div>
     </div>
+    <site-footer></site-footer>
   </div>
 </template>
 
 <script>
 import hear from "../../layout/hear/hear.vue";
 import Navs from "../../layout/nav/nav.vue";
+import SiteFooter from "../../layout/site-footer/site-footer.vue";
 export default {
   mounted() {
-    
-    console.log(this.$route.query.sj);
+    // console.log(this.$route.query.sj);
   },
-  components: { hear, Navs },
+  components: { hear, Navs, SiteFooter },
 };
 </script>
 
@@ -112,6 +273,8 @@ export default {
   width: 1226px;
   margin: 0 auto;
   padding-top: 32px;
+  display: flex;
+  justify-content: space-between;
   .img-box {
     width: 560px;
     height: 560px;
@@ -172,6 +335,251 @@ export default {
       .active {
         background: #a3a3a3;
       }
+    }
+  }
+  .product-con {
+    width: 600px;
+
+    .top-title {
+      font-size: 24px;
+      font-weight: 400;
+      color: #212121;
+    }
+    .sale-desc {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #b0b0b0;
+      span {
+        color: rgb(255, 74, 0);
+      }
+    }
+    .company-info {
+      margin-top: 14px;
+      color: #ff6700;
+      font-size: 14px;
+    }
+    .price-info {
+      padding: 12px 0;
+      font-size: 18px;
+      color: #ff6700;
+    }
+    .line {
+      margin-top: 12px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .address-box {
+      padding: 30px 50px 30px 20px;
+      margin: 20px 0;
+      background: #fafafa;
+      border: 1px solid #e0e0e0;
+      display: flex;
+      .address-con {
+        margin-left: 20px;
+        .top {
+          span {
+            font-size: 14px;
+            margin-right: 14px;
+          }
+          .edit {
+            color: #ff6700;
+            cursor: pointer;
+          }
+        }
+        .desc {
+          font-size: 14px;
+          color: #ff6700;
+        }
+      }
+    }
+  }
+  .buy-option {
+    .buy-box-child {
+      margin-bottom: 20px;
+      .title {
+        font-size: 18px;
+      }
+      .clearfix-box {
+        display: flex;
+        flex-wrap: wrap;
+        div {
+          width: 292px;
+          height: 42px;
+          line-height: 42px;
+          border: 1px solid #e0e0e0;
+          box-sizing: border-box;
+          margin-right: 12px;
+          margin-top: 10px;
+          text-align: center;
+          cursor: pointer;
+          &:nth-child(2n) {
+            margin-right: 0;
+          }
+          &:hover {
+            color: #ff6700;
+            border-color: #ff6700;
+          }
+        }
+        .active {
+          color: #ff6700;
+          border-color: #ff6700;
+        }
+      }
+    }
+  }
+  .service-box {
+    .service-item-box {
+      margin-bottom: 20px;
+      .top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        .title {
+          font-size: 18px;
+        }
+        .link {
+          font-size: 14px;
+          color: #ff6700;
+          cursor: pointer;
+        }
+      }
+      .item {
+        display: flex;
+        cursor: pointer;
+        padding: 30px 0;
+        border: 1px solid #e0e0e0;
+        .btn {
+          width: 13px;
+          height: 13px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          font-size: 12px;
+          justify-content: center;
+          border: 1px solid #e0e0e0;
+          margin-left: 30px;
+          margin-top: 20px;
+          color: #fff;
+          flex-shrink: 0;
+        }
+        .active {
+          border-color: #ff6700;
+          background-color: #ff6700;
+        }
+        img {
+          width: 50px;
+          height: 50px;
+          margin: 0 20px;
+        }
+        .txt {
+          width: 100%;
+          .title {
+            font-size: 18px;
+            font-weight: 800;
+            span {
+              padding: 2px 6px;
+              font-size: 14px;
+              background: #ff6700;
+              color: #fff;
+              border-radius: 20px;
+            }
+          }
+          .desc {
+            margin-top: 14px;
+            font-size: 14px;
+            color: #b0b0b0;
+          }
+          .buttom {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            padding-right: 20px;
+            .agreement-box {
+              display: flex;
+              align-items: center;
+
+              .icon {
+                width: 13px;
+                height: 13px;
+                display: flex;
+                align-items: center;
+                font-size: 12px;
+                justify-content: center;
+                border: 1px solid #e0e0e0;
+                color: #fff;
+                margin-right: 3px;
+              }
+              .text {
+                font-size: 14px;
+                span {
+                  color: #ff6700;
+                }
+                .shu {
+                  margin: 0 3px;
+                }
+              }
+              .price {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+        & + .item {
+          border-top: none;
+        }
+      }
+      .active {
+        border-color: #ff6700;
+        .btn,
+        .icon {
+          background-color: #ff6700 !important;
+          border-color: #ff6700 !important;
+        }
+        .txt > .title {
+          color: #ff6700;
+        }
+      }
+    }
+  }
+  .selected-list {
+    padding: 30px;
+    background: #f9f9fa;
+    margin-bottom: 30px;
+    .merchandise-box {
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      line-height: 30px;
+      color: #616161;
+    }
+    .total-price {
+      color: #ff6700;
+      font-size: 24px;
+      padding-top: 20px;
+    }
+  }
+  .btn-box {
+    display: flex;
+    margin-bottom: 30px;
+    .sale-btn {
+      width: 298px;
+      height: 52px;
+      text-align: center;
+      line-height: 52px;
+      font-size: 16px;
+      margin-right: 12px;
+      background: #ff6700;
+      border-color: #ff6700;
+      color: #fff;
+      cursor: pointer;
+    }
+    .btn-like {
+      width: 140px;
+      height: 52px;
+      line-height: 52px;
+      background: #b0b0b0;
+      color: #fff;
+      text-align: center;
+      cursor: pointer;
     }
   }
 }

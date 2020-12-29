@@ -11,7 +11,7 @@
             <span></span>
             <div :class="[activa ? '' : 'activa']" @click="rqh">扫码登录</div>
           </div>
-          <div :class="['login-main1', display ? '' : 'display']">
+          <div :class="['login-main1', ]" v-if="display">
             <input
               type="text"
               placeholder="邮箱/手机号码/小米ID"
@@ -35,7 +35,7 @@
               <div>4</div>
             </div>
           </div>
-          <div :class="['main2', display ? 'display' : '']">333</div>
+          <div :class="['main2', ]" v-else>333</div>
         </div>
       </div>
     </div>
