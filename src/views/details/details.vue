@@ -2,7 +2,7 @@
   <div>
     <hear></hear>
     <navs></navs>
-    <div class="xm-product-box">
+    <div :class="['xm-product-box', menus ? 'menu' : '']">
       <div class="xm-product">
         <div class="product-left">
           <span class="title">{{ this.$route.query.sj.name }}</span>
@@ -44,7 +44,7 @@
         </div>
       </div>
       <div class="product-con">
-        <div class="top-title">小米11</div>
+        <div class="top-title">{{ this.$route.query.sj.name }}</div>
         <div class="sale-desc">
           <span
             >「1月1号0点开始预售付尾款及首卖；最高享12期免息；标配不提供充电器和数据线，如需请选择套装版」</span
@@ -94,13 +94,25 @@
             </div>
           </div>
         </div>
+
         <div class="service-box">
-          <div class="service-item-box">
+          <div
+            class="service-item-box"
+            v-for="(item, index) in this.$route.query.sj.service_lits"
+            :item="item"
+            :key="index"
+          >
             <div class="top">
-              <span class="title">选择小米提供的意外保护</span>
-              <span class="link">了解意外保护></span>
+              <span class="title">{{ item.title }}</span>
+              <span class="link-txt">{{ item.link_txt }}></span>
             </div>
-            <div class="item active">
+            <div
+              :class="['item', ite.active ? 'active' : '']"
+              v-for="(ite, inde) in item.txt"
+              :key="inde"
+              :ite="ite"
+              @click="choice(item, ite)"
+            >
               <div class="btn">
                 <span>√</span>
               </div>
@@ -109,8 +121,10 @@
                 alt=""
               />
               <div class="txt">
-                <div class="title">意外保障服务 <span>179元</span></div>
-                <div class="desc">手机意外碎屏/进水/碾压等损坏</div>
+                <div class="titles">
+                  {{ ite.titles }} <span>{{ ite.ts }}元</span>
+                </div>
+                <div class="desc">{{ ite.desc }}</div>
                 <div class="buttom">
                   <div class="agreement-box">
                     <div class="icon">
@@ -118,72 +132,12 @@
                     </div>
                     <div class="text">
                       我已阅读
-                      <span>服务条款</span>
+                      <span>{{ ite.fuwu }}</span>
                       <span class="shu">|</span>
-                      <span>常见问题</span>
+                      <span>{{ ite.wj }}</span>
                     </div>
                   </div>
-                  <span class="price">179元</span>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="btn">
-                <span>√</span>
-              </div>
-              <img
-                src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1605594163.22542401.png"
-                alt=""
-              />
-              <div class="txt">
-                <div class="title">碎屏保障服务 <span>已省20元</span></div>
-                <div class="desc">手机意外碎屏/进水/碾压等损坏</div>
-                <div class="buttom">
-                  <div class="agreement-box">
-                    <div class="icon">
-                      <span>√</span>
-                    </div>
-                    <div class="text">
-                      我已阅读
-                      <span>服务条款</span>
-                      <span class="shu">|</span>
-                      <span>常见问题</span>
-                    </div>
-                  </div>
-                  <span class="price">179元</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="service-item-box">
-            <div class="top">
-              <span class="title">选择小米提供的延长保修</span>
-              <span class="link">了解延长保修></span>
-            </div>
-            <div class="item ">
-              <div class="btn">
-                <span>√</span>
-              </div>
-              <img
-                src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1605594163.22542401.png"
-                alt=""
-              />
-              <div class="txt">
-                <div class="title ">延长保修服务 <span>已省10元</span></div>
-                <div class="desc">厂保延一年，性能故障免费维修</div>
-                <div class="buttom">
-                  <div class="agreement-box">
-                    <div class="icon ">
-                      <span>√</span>
-                    </div>
-                    <div class="text">
-                      我已阅读
-                      <span>服务条款</span>
-                      <span class="shu">|</span>
-                      <span>常见问题</span>
-                    </div>
-                  </div>
-                  <span class="price">39元</span>
+                  <span class="price">{{ ite.price }}元</span>
                 </div>
               </div>
             </div>
@@ -213,9 +167,111 @@ import hear from "../../layout/hear/hear.vue";
 import Navs from "../../layout/nav/nav.vue";
 import SiteFooter from "../../layout/site-footer/site-footer.vue";
 export default {
-  mounted() {
-    // console.log(this.$route.query.sj);
+  data() {
+    return {
+      menus: false,
+      // service_lits: [
+      //   {
+      //     title: "选择小米提供的意外保护",
+      //     link_txt: "了解意外保护",
+      //     txt: [
+      //       {
+      //         active: false,
+      //         titles: "意外保障服务",
+      //         ts: "179",
+      //         desc: "手机意外碎屏/进水/碾压等损坏",
+      //         fuwu: "服务条款",
+      //         wj: "常见问题",
+      //         price: "179",
+      //       },
+      //       {
+      //         active: false,
+      //         titles: "意外保障",
+      //         ts: "17",
+      //         desc: "手机意外碎屏/进水等损坏",
+      //         fuwu: "服务",
+      //         wj: "常见",
+      //         price: "17",
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     title: "选择小米提供的意外维修",
+      //     link_txt: "了解意外维修",
+      //     txt: [
+      //       {
+      //         active: false,
+      //         titles: "意外保障服务",
+      //         ts: "179",
+      //         desc: "手机意外碎屏/进水/碾压等损坏",
+      //         fuwu: "服务条款",
+      //         wj: "常见问题",
+      //         price: "179",
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     title: "选择小米",
+      //     link_txt: "了解意外维修",
+      //     txt: [
+      //       {
+      //         active: false,
+      //         titles: "意外保障服务",
+      //         ts: "179",
+      //         desc: "手机意外碎屏/进水/碾压等损坏",
+      //         fuwu: "服务条款",
+      //         wj: "常见问题",
+      //         price: "179",
+      //       },
+      //       {
+      //         active: false,
+      //         titles: "意外保障服务",
+      //         ts: "179",
+      //         desc: "手机意外碎屏/进水/碾压等损坏",
+      //         fuwu: "服务条款",
+      //         wj: "常见问题",
+      //         price: "179",
+      //       },
+      //       {
+      //         active: false,
+      //         titles: "意外保障服务",
+      //         ts: "179",
+      //         desc: "手机意外碎屏/进水/碾压等损坏",
+      //         fuwu: "服务条款",
+      //         wj: "常见问题",
+      //         price: "179",
+      //       },
+      //     ],
+      //   },
+      // ],
+    };
   },
+  mounted() {
+    window.addEventListener("scroll", this.menu);
+  },
+  methods: {
+    menu() {
+      if (document.documentElement.scrollTop >= 140) {
+        this.menus = true;
+      } else {
+        this.menus = false;
+      }
+    },
+    choice(item, ite) {
+      if (ite.active) {
+        item.txt.forEach((row) => {
+          row.active = false;
+        });
+      } else {
+        item.txt.forEach((row) => {
+          row.active = false;
+        });
+        ite.active = !ite.active;
+      }
+      console.log(this.$route.query.sj.service_lits);
+    },
+  },
+
   components: { hear, Navs, SiteFooter },
 };
 </script>
@@ -225,7 +281,8 @@ export default {
   background: #fff;
   border-top: 1px solid #e0e0e0;
   border-bottom: 1px solid #e0e0e0;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.07);
+  // box-shadow: 0 5px 5px rgba(0, 0, 0, 0.07);i
+  // transition: 0.5;
   .xm-product {
     width: 1226px;
     height: 63px;
@@ -268,6 +325,12 @@ export default {
       }
     }
   }
+}
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
 }
 .product-box {
   width: 1226px;
@@ -436,7 +499,7 @@ export default {
         .title {
           font-size: 18px;
         }
-        .link {
+        .link-txt {
           font-size: 14px;
           color: #ff6700;
           cursor: pointer;
@@ -472,7 +535,7 @@ export default {
         }
         .txt {
           width: 100%;
-          .title {
+          .titles {
             font-size: 18px;
             font-weight: 800;
             span {
@@ -523,9 +586,6 @@ export default {
             }
           }
         }
-        & + .item {
-          border-top: none;
-        }
       }
       .active {
         border-color: #ff6700;
@@ -534,7 +594,7 @@ export default {
           background-color: #ff6700 !important;
           border-color: #ff6700 !important;
         }
-        .txt > .title {
+        .txt > .titles {
           color: #ff6700;
         }
       }

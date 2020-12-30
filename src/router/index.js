@@ -10,12 +10,12 @@ const routes = [
   },
   {
     path: "/login",
-    name:'login',
+    name: "login",
     component: () => import("../views/login/login.vue"),
   },
   {
     path: "/details",
-    name:'details',
+    name: "details",
     component: () => import("../views/details/details.vue"),
   },
 ];
@@ -24,6 +24,10 @@ const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes,
+  scrollBehavior: () => ({ y: 0 }),
 });
-
+// const VueRouterPush = Router.prototype.push;
+// Router.prototype.push = function push(to) {
+//   return VueRouterPush.call(this, to).catch((err) => err);
+// };
 export default router;

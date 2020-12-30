@@ -46,6 +46,80 @@ export default {
           name: "Note 9 Pro",
           introduction: "一亿像素夜景相机，120Hz六档变速高刷屏",
           rate: "1599",
+          service_lits: [
+            {
+              title: "选择小米提供的意外保护",
+              link_txt: "了解意外保护",
+              txt: [
+                {
+                  active: false,
+                  titles: "意外保障服务",
+                  ts: "179",
+                  desc: "手机意外碎屏/进水/碾压等损坏",
+                  fuwu: "服务条款",
+                  wj: "常见问题",
+                  price: "179",
+                },
+                {
+                  active: false,
+                  titles: "意外保障",
+                  ts: "17",
+                  desc: "手机意外碎屏/进水等损坏",
+                  fuwu: "服务",
+                  wj: "常见",
+                  price: "17",
+                },
+              ],
+            },
+            {
+              title: "选择小米提供的意外维修",
+              link_txt: "了解意外维修",
+              txt: [
+                {
+                  active: false,
+                  titles: "意外保障服务",
+                  ts: "179",
+                  desc: "手机意外碎屏/进水/碾压等损坏",
+                  fuwu: "服务条款",
+                  wj: "常见问题",
+                  price: "179",
+                },
+              ],
+            },
+            {
+              title: "选择小米",
+              link_txt: "了解意外维修",
+              txt: [
+                {
+                  active: false,
+                  titles: "意外保障服务",
+                  ts: "179",
+                  desc: "手机意外碎屏/进水/碾压等损坏",
+                  fuwu: "服务条款",
+                  wj: "常见问题",
+                  price: "179",
+                },
+                {
+                  active: false,
+                  titles: "意外保障服务",
+                  ts: "179",
+                  desc: "手机意外碎屏/进水/碾压等损坏",
+                  fuwu: "服务条款",
+                  wj: "常见问题",
+                  price: "179",
+                },
+                {
+                  active: false,
+                  titles: "意外保障服务",
+                  ts: "179",
+                  desc: "手机意外碎屏/进水/碾压等损坏",
+                  fuwu: "服务条款",
+                  wj: "常见问题",
+                  price: "179",
+                },
+              ],
+            },
+          ],
         },
         {
           img: require("@/assets/img/phone/phoneItem1.jpg"),
@@ -99,6 +173,7 @@ export default {
         query: {
           sj: this.merchandise[index],
         },
+        
       });
     },
   },
