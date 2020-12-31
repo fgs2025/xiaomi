@@ -268,7 +268,7 @@ export default {
         });
         ite.active = !ite.active;
       }
-      console.log(this.$route.query.sj.service_lits);
+      console.log(ite.active);
     },
   },
 

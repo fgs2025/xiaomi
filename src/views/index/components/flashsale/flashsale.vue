@@ -18,18 +18,15 @@
           class="item-box"
           :style="{ transform: `translatex(-${translatex}px)` }"
         >
-          <div
-            class="item"
-            v-for="(item, index) in merchandise"
-            :key="index"
-        
-          >
-            <img :src="item.img" alt="" />
-            <div class="name">{{ item.name }}</div>
-            <div class="introduction">{{ item.introduction }}</div>
-            <div class="rate">
-              <span>{{ item.rate }}元</span><del>{{ item.del }}元</del>
-            </div>
+          <div class="item" v-for="(item, index) in merchandise" :key="index">
+            <router-link to="/buy">
+              <img :src="item.img" alt="" />
+              <div class="name">{{ item.name }}</div>
+              <div class="introduction">{{ item.introduction }}</div>
+              <div class="rate">
+                <span>{{ item.rate }}元</span><del>{{ item.del }}元</del>
+              </div>
+            </router-link>
           </div>
         </div>
       </div>
@@ -277,11 +274,17 @@ export default {
           // border: 1px solid red;
           box-sizing: border-box;
           text-align: center;
-          padding-top: 20px;
+          
           background: #fff;
           flex-shrink: 0;
           margin-right: 14px;
           cursor: pointer;
+          a{
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            padding-top: 20px;
+          }
           img {
             width: 160px;
             height: 160px;
