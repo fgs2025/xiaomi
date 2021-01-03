@@ -5,49 +5,31 @@
     <div class="seckill-head"></div>
     <div class="seckill-box">
       <div class="seckill-banner">
-        <div class="item active">
-          <span>10:00</span>
+        <div
+          :class="['item', item.active ? 'active' : '']"
+          v-for="(item, index) in item_list"
+          :key="index"
+          @click="change(index)"
+        >
+          <span>{{ item.time }}</span>
           <div>
-            <p>抢购中</p>
-            <p>距结束 03:28:29</p>
-          </div>
-        </div>
-        <div class="item">
-          <span>10:00</span>
-          <div>
-            <p>即将开始</p>
-          </div>
-        </div>
-        <div class="item">
-          <span>10:00</span>
-          <div>
-            <p>即将开始</p>
-          </div>
-        </div>
-        <div class="item">
-          <span>10:00</span>
-          <div>
-            <p>即将开始</p>
-          </div>
-        </div>
-        <div class="item">
-          <span>10:00</span>
-          <div>
-            <p>即将开始</p>
+            <p>{{ item.p1 }}</p>
+            <p>{{ item.p2 }}</p>
           </div>
         </div>
       </div>
       <div class="seckill-con">
-        <div class="item">
+        <div
+          class="item"
+          v-for="(item, inde) in item_list[index].list"
+          :key="inde"
+        >
           <div class="img-box">
-            <img
-              src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/3ec35a9d36a0a75bd899b9401658d56c.jpg"
-              alt=""
-            />
+            <img :src="item.img" alt="" />
           </div>
           <div class="txt">
-            <div class="name">日常元素抽纸 青春版 24包/箱</div>
-            <div class="desc">精选原生竹浆，健康环保</div>
+            <div class="name">{{ item.name }}</div>
+            <div class="desc">{{ item.desc }}</div>
             <div class="process-box">
               <span class="process">
                 <span class="progress"></span>
@@ -55,16 +37,15 @@
               <span class="tx">21%</span>
             </div>
             <div class="rate-box">
-              <span>27.90元</span>
-              <del>32.9元</del>
+              <span>{{ item.span }}元</span>
+              <del>{{ item.del }}元</del>
             </div>
-            <div class="btn">1</div>
+            <div :class="['btn', index > 0 ? 'active' : '']">
+              {{ item.btn }}
+            </div>
+            <p>{{item.p}}</p>
           </div>
         </div>
-        <div class="item">1</div>
-        <div class="item">1</div>
-        <div class="item">1</div>
-        <div class="item">1</div>
       </div>
     </div>
     <site-footer></site-footer>
@@ -76,6 +57,73 @@ import hear from "../../layout/hear/hear.vue";
 import Navs from "../../layout/nav/nav.vue";
 import SiteFooter from "../../layout/site-footer/site-footer.vue";
 export default {
+  data() {
+    return {
+      item_list: [
+        {
+          time: "10:00",
+          p1: "抢购中",
+          p2: "距结束 03:28:29",
+          active: true,
+          list: [
+            {
+              img:
+                "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/3ec35a9d36a0a75bd899b9401658d56c.jpg",
+              name: "日常元素抽纸 青春版 24包/箱",
+              desc: "精选原生竹浆，健康环保",
+              span: "27.90",
+              del: "32.9",
+              btn: "立即抢购",
+            },
+            {
+              img:
+                "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/3ec35a9d36a0a75bd899b9401658d56c.jpg",
+              name: "日常元素抽纸 青春版 24包/箱",
+              desc: "精选原生竹浆，健康环保",
+              span: "27.90",
+              del: "32.9",
+              btn: "立即抢购",
+            },
+            {
+              img:
+                "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/3ec35a9d36a0a75bd899b9401658d56c.jpg",
+              name: "日常元素抽纸 青春版 24包/箱",
+              desc: "精选原生竹浆，健康环保",
+              span: "27.90",
+              del: "32.9",
+              btn: "立即抢购",
+            },
+          ],
+        },
+        {
+          time: "12:00",
+          p1: "即将开始",
+          p2: "",
+          active: false,
+          list: [
+            {
+              img:
+                "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/3e33f9e4a70b7764081bcdd64a77cd8d.jpg",
+              name: "日常元素抽纸 青春版 24包/箱",
+              desc: "精选原生竹浆，健康环保",
+              span: "27.90",
+              del: "32.9",
+              btn: "提醒我",
+              p:'已有9人设置提醒'
+            },
+          ],
+        },
+      ],
+      index: 0,
+    };
+  },
+  methods: {
+    change(index) {
+      this.item_list.forEach((row) => (row.active = false));
+      this.item_list[index].active = true;
+      this.index = index;
+    },
+  },
   components: {
     hear,
     Navs,
@@ -199,7 +247,7 @@ export default {
           }
         }
         .rate-box {
-          margin-top: 14px;
+          margin-top: 5px;
           span {
             font-size: 16px;
             color: #f1393a;
@@ -209,6 +257,22 @@ export default {
             font-size: 12px;
             margin-left: 10px;
           }
+        }
+        .btn {
+          width: 118px;
+          height: 28px;
+          font-size: 12px;
+          line-height: 28px;
+          text-align: center;
+          background: #f1393a;
+          color: #fff;
+          margin-top: 10px;
+        }
+        .active {
+          background: #83c44e;
+        }
+        p{
+          font-size: 12px;
         }
       }
       &:hover {

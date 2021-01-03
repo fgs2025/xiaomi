@@ -2,10 +2,11 @@
   <div>
     <hear></hear>
     <navs></navs>
+    <index></index>
     <div :class="['xm-product-box', menus ? 'menu' : '']">
       <div class="xm-product">
         <div class="product-left">
-          <span class="title">{{ this.$route.query.sj.name }}</span>
+          <span class="title">{{ title }}</span>
           <div class="con">
             <span>|</span>
             <span class="txt">小米10至尊纪念版</span>
@@ -28,10 +29,10 @@
       <div
         class="img-box"
         :style="{
-          backgroundImage: `url(${this.$route.query.sj.img})`,
+          backgroundImage: `url(${img_arr[0].img})`,
         }"
       >
-        <div class="letf-btn"><i class="iconfont icon-zuo1"></i></div>
+        <!-- <div class="letf-btn"><i class="iconfont icon-zuo1"></i></div>
         <div class="right-btn">
           <i class="iconfont icon-mjiantou-copy"></i>
         </div>
@@ -41,20 +42,16 @@
           <div class="dian"></div>
           <div class="dian"></div>
           <div class="dian"></div>
-        </div>
+        </div> -->
       </div>
       <div class="product-con">
-        <div class="top-title">{{ this.$route.query.sj.name }}</div>
+        <div class="top-title">{{ title }}</div>
         <div class="sale-desc">
-          <span
-            >「1月1号0点开始预售付尾款及首卖；最高享12期免息；标配不提供充电器和数据线，如需请选择套装版」</span
-          >
-          骁龙888｜2K AMOLED 四曲面柔性屏｜1亿像素三摄｜时尚轻薄机身｜55W
-          有线闪充｜50W 无线闪充｜10W
-          无线反充｜LPDDR5｜WiFi6（增强版）｜视频「超级夜景」｜哈曼卡顿音频认证｜立体声双扬声器
+          <span>{{ sale }}</span
+          >{{ desc }}
         </div>
         <p class="company-info">小米自营</p>
-        <div class="price-info">1599元</div>
+        <div class="price-info">{{ price }}元</div>
         <div class="line"></div>
         <div class="address-box">
           <div class="icon-box"><i class="iconfont icon-sousuo"></i></div>
@@ -70,35 +67,37 @@
           </div>
         </div>
         <div class="buy-option">
-          <div class="buy-box-child">
-            <div class="title">选择版本</div>
+          <div
+            class="buy-box-child"
+            v-for="(item, index) in revision_lits"
+            :key="index"
+          >
+            <div class="title">{{ item.title }}</div>
             <div class="clearfix-box">
-              <div class="active">6GB+128GB</div>
-              <div>8GB+128GB</div>
-              <div>8GB+256GB</div>
+              <div
+                :class="[ite.active ? 'active' : '']"
+                v-for="(ite, inde) in item.clearfix"
+                :key="inde"
+                @click="revision_change(item, ite)"
+              >
+                {{ ite.title }}
+              </div>
             </div>
           </div>
-          <div class="buy-box-child">
+          <!-- <div class="buy-box-child">
             <div class="title">选择颜色</div>
             <div class="clearfix-box">
               <div class="active">静默星空</div>
               <div>碧海星辰</div>
               <div>湖光秋色</div>
             </div>
-          </div>
-          <div class="buy-box-child">
-            <div class="title">选择套餐</div>
-            <div class="clearfix-box">
-              <div class="active">标准版</div>
-              <div>手机保护壳套餐</div>
-            </div>
-          </div>
+          </div> -->
         </div>
 
         <div class="service-box">
           <div
             class="service-item-box"
-            v-for="(item, index) in this.$route.query.sj.service_lits"
+            v-for="(item, index) in service_lits"
             :item="item"
             :key="index"
           >
@@ -148,9 +147,9 @@
             <span class="merchandise-name"
               >Redmi Note 9 Pro 5G 8GB+128G 静默星空</span
             >
-            <span class="merchandise-rate">1799元</span>
+            <span class="merchandise-rate">{{ price }}元</span>
           </div>
-          <div class="total-price">总计：1805元</div>
+          <div class="total-price">总计：1599元</div>
         </div>
         <div class="btn-box">
           <div class="sale-btn">加入购物车</div>
@@ -158,6 +157,7 @@
         </div>
       </div>
     </div>
+    
     <site-footer></site-footer>
   </div>
 </template>
@@ -165,89 +165,141 @@
 <script>
 import hear from "../../layout/hear/hear.vue";
 import Navs from "../../layout/nav/nav.vue";
+import index from "../../layout/right-nav/index.vue";
 import SiteFooter from "../../layout/site-footer/site-footer.vue";
 export default {
   data() {
     return {
       menus: false,
-      // service_lits: [
-      //   {
-      //     title: "选择小米提供的意外保护",
-      //     link_txt: "了解意外保护",
-      //     txt: [
-      //       {
-      //         active: false,
-      //         titles: "意外保障服务",
-      //         ts: "179",
-      //         desc: "手机意外碎屏/进水/碾压等损坏",
-      //         fuwu: "服务条款",
-      //         wj: "常见问题",
-      //         price: "179",
-      //       },
-      //       {
-      //         active: false,
-      //         titles: "意外保障",
-      //         ts: "17",
-      //         desc: "手机意外碎屏/进水等损坏",
-      //         fuwu: "服务",
-      //         wj: "常见",
-      //         price: "17",
-      //       },
-      //     ],
-      //   },
-      //   {
-      //     title: "选择小米提供的意外维修",
-      //     link_txt: "了解意外维修",
-      //     txt: [
-      //       {
-      //         active: false,
-      //         titles: "意外保障服务",
-      //         ts: "179",
-      //         desc: "手机意外碎屏/进水/碾压等损坏",
-      //         fuwu: "服务条款",
-      //         wj: "常见问题",
-      //         price: "179",
-      //       },
-      //     ],
-      //   },
-      //   {
-      //     title: "选择小米",
-      //     link_txt: "了解意外维修",
-      //     txt: [
-      //       {
-      //         active: false,
-      //         titles: "意外保障服务",
-      //         ts: "179",
-      //         desc: "手机意外碎屏/进水/碾压等损坏",
-      //         fuwu: "服务条款",
-      //         wj: "常见问题",
-      //         price: "179",
-      //       },
-      //       {
-      //         active: false,
-      //         titles: "意外保障服务",
-      //         ts: "179",
-      //         desc: "手机意外碎屏/进水/碾压等损坏",
-      //         fuwu: "服务条款",
-      //         wj: "常见问题",
-      //         price: "179",
-      //       },
-      //       {
-      //         active: false,
-      //         titles: "意外保障服务",
-      //         ts: "179",
-      //         desc: "手机意外碎屏/进水/碾压等损坏",
-      //         fuwu: "服务条款",
-      //         wj: "常见问题",
-      //         price: "179",
-      //       },
-      //     ],
-      //   },
-      // ],
+      title: "Note 9 Pro 5G",
+      price: "",
+      sale:
+        "「购机享多看阅读免费VIP季卡；赠价值798元双人定制体检卡；1.1-1.4购机得2倍米金；+1元得200G云空间月卡」",
+      desc: `一亿像素夜景相机 / 120Hz六档变速高刷屏 / 国内首发骁龙750G / 6.67"小孔径全面屏 / 立体声双扬声器 / 4820mAh+33W闪充 / 多功能NFC / 线性马达 / 红外遥控 / 全新MIUI 12系统`,
+      img_arr: [
+        {
+          img: require("@/assets/img/phone/phoneItem1.jpg"),
+          active: true,
+        },
+      ],
+      revision_lits: [
+        {
+          title: "选择版本",
+          clearfix: [
+            {
+              title: "6GB+128GB",
+              active: true,
+              price: "1599",
+            },
+            {
+              title: "8GB+128GB",
+              active: false,
+              price: "1799",
+            },
+            {
+              title: "8GB+256GB",
+              active: false,
+              price: "1999",
+            },
+          ],
+        },
+        {
+          title: "选择颜色",
+          clearfix: [
+            {
+              title: "静默星空",
+              active: true,
+            },
+            {
+              title: "碧海星辰",
+              active: false,
+            },
+            {
+              title: "湖光秋色",
+              active: false,
+            },
+          ],
+        },
+      ],
+      service_lits: [
+        {
+          title: "选择小米提供的意外保护",
+          link_txt: "了解意外保护",
+          txt: [
+            {
+              active: false,
+              titles: "意外保障服务",
+              ts: "179",
+              desc: "手机意外碎屏/进水/碾压等损坏",
+              fuwu: "服务条款",
+              wj: "常见问题",
+              price: "179",
+            },
+            {
+              active: false,
+              titles: "意外保障",
+              ts: "17",
+              desc: "手机意外碎屏/进水等损坏",
+              fuwu: "服务",
+              wj: "常见",
+              price: "17",
+            },
+          ],
+        },
+        {
+          title: "选择小米提供的意外维修",
+          link_txt: "了解意外维修",
+          txt: [
+            {
+              active: false,
+              titles: "意外保障服务",
+              ts: "179",
+              desc: "手机意外碎屏/进水/碾压等损坏",
+              fuwu: "服务条款",
+              wj: "常见问题",
+              price: "179",
+            },
+          ],
+        },
+        {
+          title: "选择小米",
+          link_txt: "了解意外维修",
+          txt: [
+            {
+              active: false,
+              titles: "意外保障服务",
+              ts: "179",
+              desc: "手机意外碎屏/进水/碾压等损坏",
+              fuwu: "服务条款",
+              wj: "常见问题",
+              price: "179",
+            },
+            {
+              active: false,
+              titles: "意外保障服务",
+              ts: "179",
+              desc: "手机意外碎屏/进水/碾压等损坏",
+              fuwu: "服务条款",
+              wj: "常见问题",
+              price: "179",
+            },
+            {
+              active: false,
+              titles: "意外保障服务",
+              ts: "179",
+              desc: "手机意外碎屏/进水/碾压等损坏",
+              fuwu: "服务条款",
+              wj: "常见问题",
+              price: "179",
+            },
+          ],
+        },
+      ],
     };
   },
   mounted() {
     window.addEventListener("scroll", this.menu);
+    this.price = this.revision_lits[0].clearfix[0].price;
   },
   methods: {
     menu() {
@@ -268,11 +320,16 @@ export default {
         });
         ite.active = !ite.active;
       }
-      console.log(ite.active);
+    },
+    revision_change(item, ite) {
+      item.clearfix.forEach((row) => (row.active = false));
+      ite.active = true;
+      if (ite.price) {
+        this.price = ite.price;
+      }
     },
   },
-
-  components: { hear, Navs, SiteFooter },
+  components: { hear, Navs,index, SiteFooter },
 };
 </script>
 

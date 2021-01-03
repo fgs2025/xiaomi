@@ -1,7 +1,11 @@
 <template>
   <div class="category-wrap" v-if="dis">
     <div class="category-box">
-      <div class="category-left" @mouseenter="diss" @mouseleave="disx">
+      <div
+        :class="['category-left', this.$route.path != '/' ? 'left-active' : '']"
+        @mouseenter="diss"
+        @mouseleave="disx"
+      >
         <div
           :class="['item-title', item.active ? 'active' : '']"
           v-for="(item, index) in category_arr"
@@ -21,7 +25,7 @@
         class="category-right"
         v-if="show"
         @mouseenter="display(index)"
-        @mouseleave="hide"
+        @mouseleave="hides"
         :style="{
           width: widths + 'px',
         }"
@@ -395,6 +399,11 @@ export default {
     hide() {
       this.category_arr.forEach((row) => (row.active = false));
       this.show = false;
+      // this.dis = false;
+    },
+    hides() {
+      this.category_arr.forEach((row) => (row.active = false));
+      this.show = false;
       this.dis = false;
     },
   },
@@ -449,8 +458,14 @@ export default {
         }
       }
       .active {
+        color: #fff;
         background-color: #ff6700;
       }
+    }
+    .left-active {
+      background-color: #fff;
+      color: black;
+      border: 1px solid #ff6700;
     }
     .category-right {
       position: absolute;

@@ -10,7 +10,9 @@
     </div>
     <div class="right">
       <div v-for="(item, index) in gg" :key="index" >
+        <router-link to="/details">
         <img :src="item" alt="" width="100%" height="100%" />
+         </router-link>
       </div>
     </div>
   </div>

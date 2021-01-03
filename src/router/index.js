@@ -23,6 +23,22 @@ const routes = [
     name: "buy",
     component: () => import("../views/buy/buy.vue"),
   },
+  {
+    path: "/user",
+    name: "user",
+    component: () => import("../views/user/user.vue"),
+    redirect: '/user/portal',
+    children: [
+      {
+        path: 'portal',
+        component: () => import("../views/user/components/portal.vue")
+      },
+      {
+        path: 'message',
+        component: () => import("../views/user/components/message.vue")
+      },
+    ]
+  },
 ];
 
 const router = new VueRouter({
