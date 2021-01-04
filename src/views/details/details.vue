@@ -60,7 +60,6 @@
               <span>广东</span>
               <span>湛江市</span>
               <span>雷州市</span>
-              <span>乌石镇</span>
               <span class="edit">修改</span>
             </div>
             <div class="desc">有现货</div>
@@ -149,6 +148,7 @@
             >
             <span class="merchandise-rate">{{ price }}元</span>
           </div>
+          
           <div class="total-price">总计：1599元</div>
         </div>
         <div class="btn-box">
@@ -157,7 +157,7 @@
         </div>
       </div>
     </div>
-    
+
     <site-footer></site-footer>
   </div>
 </template>
@@ -179,7 +179,7 @@ export default {
       img_arr: [
         {
           img: require("@/assets/img/phone/phoneItem1.jpg"),
-          active: true,
+          // active: true,
         },
       ],
       revision_lits: [
@@ -329,7 +329,7 @@ export default {
       }
     },
   },
-  components: { hear, Navs,index, SiteFooter },
+  components: { hear, Navs, index, SiteFooter },
 };
 </script>
 
