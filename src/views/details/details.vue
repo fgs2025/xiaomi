@@ -143,13 +143,30 @@
         </div>
         <div class="selected-list">
           <div class="merchandise-box">
-            <span class="merchandise-name"
-              >Redmi Note 9 Pro 5G 8GB+128G 静默星空</span
-            >
-            <span class="merchandise-rate">{{ price }}元</span>
+            <ul>
+              <li>
+                <span class="merchandise-name"
+                  >Redmi Note 9 Pro 5G {{ cc }} {{ dd }}</span
+                >
+                <span class="merchandise-rate">{{ price }}元</span>
+              </li>
+            </ul>
           </div>
-          
-          <div class="total-price">总计：1599元</div>
+
+          <div
+            class="merchandise-box"
+            v-for="(item, index) in service_lits"
+            :key="index"
+          >
+            <ul v-for="(ite, index) in item.txt" :key="index">
+              <li v-if="ite.active">
+                <span class="merchandise-name">{{ ite.titles }}</span>
+                <span class="merchandise-rate">{{ ite.price }}元</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="total-price">总计：{{ aaa }}元</div>
         </div>
         <div class="btn-box">
           <div class="sale-btn">加入购物车</div>
@@ -173,6 +190,10 @@ export default {
       menus: false,
       title: "Note 9 Pro 5G",
       price: "",
+      aa: "",
+      bb: "",
+      cc: "",
+      dd: "",
       sale:
         "「购机享多看阅读免费VIP季卡；赠价值798元双人定制体检卡；1.1-1.4购机得2倍米金；+1元得200G云空间月卡」",
       desc: `一亿像素夜景相机 / 120Hz六档变速高刷屏 / 国内首发骁龙750G / 6.67"小孔径全面屏 / 立体声双扬声器 / 4820mAh+33W闪充 / 多功能NFC / 线性马达 / 红外遥控 / 全新MIUI 12系统`,
@@ -229,20 +250,20 @@ export default {
             {
               active: false,
               titles: "意外保障服务",
-              ts: "179",
+              ts: "1",
               desc: "手机意外碎屏/进水/碾压等损坏",
               fuwu: "服务条款",
               wj: "常见问题",
-              price: "179",
+              price: "1",
             },
             {
               active: false,
               titles: "意外保障",
-              ts: "17",
+              ts: "2",
               desc: "手机意外碎屏/进水等损坏",
               fuwu: "服务",
               wj: "常见",
-              price: "17",
+              price: "2",
             },
           ],
         },
@@ -253,11 +274,11 @@ export default {
             {
               active: false,
               titles: "意外保障服务",
-              ts: "179",
+              ts: "3",
               desc: "手机意外碎屏/进水/碾压等损坏",
               fuwu: "服务条款",
               wj: "常见问题",
-              price: "179",
+              price: "3",
             },
           ],
         },
@@ -267,30 +288,30 @@ export default {
           txt: [
             {
               active: false,
-              titles: "意外保障服务",
-              ts: "179",
+              titles: "意服务",
+              ts: "4",
               desc: "手机意外碎屏/进水/碾压等损坏",
               fuwu: "服务条款",
               wj: "常见问题",
-              price: "179",
+              price: "4",
             },
             {
               active: false,
               titles: "意外保障服务",
-              ts: "179",
+              ts: "5",
               desc: "手机意外碎屏/进水/碾压等损坏",
               fuwu: "服务条款",
               wj: "常见问题",
-              price: "179",
+              price: "5",
             },
             {
               active: false,
               titles: "意外保障服务",
-              ts: "179",
+              ts: "6",
               desc: "手机意外碎屏/进水/碾压等损坏",
               fuwu: "服务条款",
               wj: "常见问题",
-              price: "179",
+              price: "6",
             },
           ],
         },
@@ -299,7 +320,26 @@ export default {
   },
   mounted() {
     window.addEventListener("scroll", this.menu);
-    this.price = this.revision_lits[0].clearfix[0].price;
+    // this.price = this.revision_lits[0].clearfix[0].price;
+
+    this.revision_lits.forEach((row) => {
+      row.clearfix.forEach((ro) => {
+        if (ro.active) {
+          if (ro.price) {
+            this.price = ro.price;
+            this.aa = Number(this.price);
+            this.cc = ro.title;
+          }else{
+            this.dd = ro.title;
+          }
+        }
+      });
+    });
+  },
+  computed: {
+    aaa() {
+      return this.aa + this.bb;
+    },
   },
   methods: {
     menu() {
@@ -309,7 +349,23 @@ export default {
         this.menus = false;
       }
     },
+    revision_change(item, ite) {
+      item.clearfix.forEach((row) => (row.active = false));
+      ite.active = true;
+      if (ite.price) {
+        this.price = ite.price;
+        this.aa = Number(this.price);
+        this.cc = ite.title;
+      } else {
+        this.dd = ite.title;
+      }
+    },
     choice(item, ite) {
+      item.txt.forEach((row) => {
+        if (row.active) {
+          this.bb = Number(this.bb) - Number(row.price);
+        }
+      });
       if (ite.active) {
         item.txt.forEach((row) => {
           row.active = false;
@@ -319,13 +375,7 @@ export default {
           row.active = false;
         });
         ite.active = !ite.active;
-      }
-    },
-    revision_change(item, ite) {
-      item.clearfix.forEach((row) => (row.active = false));
-      ite.active = true;
-      if (ite.price) {
-        this.price = ite.price;
+        this.bb = Number(this.bb) + Number(ite.price);
       }
     },
   },
@@ -663,10 +713,13 @@ export default {
     margin-bottom: 30px;
     .merchandise-box {
       font-size: 14px;
-      display: flex;
-      justify-content: space-between;
       line-height: 30px;
       color: #616161;
+      li {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+      }
     }
     .total-price {
       color: #ff6700;
