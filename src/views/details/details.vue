@@ -146,7 +146,7 @@
             <ul>
               <li>
                 <span class="merchandise-name"
-                  >Redmi Note 9 Pro 5G {{ cc }} {{ dd }}</span
+                  >Redmi Note 9 Pro 5G {{ cc }} {{ color }}</span
                 >
                 <span class="merchandise-rate">{{ price }}元</span>
               </li>
@@ -193,7 +193,7 @@ export default {
       aa: "",
       bb: "",
       cc: "",
-      dd: "",
+      color: "",
       sale:
         "「购机享多看阅读免费VIP季卡；赠价值798元双人定制体检卡；1.1-1.4购机得2倍米金；+1元得200G云空间月卡」",
       desc: `一亿像素夜景相机 / 120Hz六档变速高刷屏 / 国内首发骁龙750G / 6.67"小孔径全面屏 / 立体声双扬声器 / 4820mAh+33W闪充 / 多功能NFC / 线性马达 / 红外遥控 / 全新MIUI 12系统`,
@@ -329,8 +329,8 @@ export default {
             this.price = ro.price;
             this.aa = Number(this.price);
             this.cc = ro.title;
-          }else{
-            this.dd = ro.title;
+          } else {
+            this.color = ro.title;
           }
         }
       });
@@ -357,7 +357,7 @@ export default {
         this.aa = Number(this.price);
         this.cc = ite.title;
       } else {
-        this.dd = ite.title;
+        this.color = ite.title;
       }
     },
     choice(item, ite) {
