@@ -7,8 +7,13 @@ export default new Vuex.Store({
   state: {
     zh: "123",
     mm: "123",
+    merchandise:{}
   },
-  mutations: {},
+  mutations: {
+    increment(state, merchandise) {
+      state.merchandise = merchandise;
+    },
+  },
   actions: {},
   modules: {},
 });

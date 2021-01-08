@@ -4,26 +4,29 @@
     <navs></navs>
     <index></index>
     <!-- 顶栏 -->
-    <xmProduct :class="[menus ? 'menu' : '']" :title="title"></xmProduct>
+    <xmProduct
+      :class="[merchandise.menus ? 'menu' : '']"
+      :title="merchandise.title"
+    ></xmProduct>
     <div class="product-box">
-      <swiper :img_arr="img_arr"></swiper
+      <swiper :img_arr="merchandise.img_arr"></swiper
       ><!-- 左边图片 -->
 
       <div class="product-con">
-        <div class="top-title">{{ title }}</div>
+        <div class="top-title">{{ merchandise.title }}</div>
         <div class="sale-desc">
-          <span>{{ sale }}</span
-          >{{ desc }}
+          <span>{{ merchandise.sale }}</span
+          >{{ merchandise.desc }}
         </div>
         <p class="company-info">小米自营</p>
-        <div class="price-info">{{ price }}元</div>
+        <div class="price-info">{{ merchandise.price }}元</div>
         <div class="line"></div>
 
         <addresss></addresss>
         <div class="buy-option">
           <div
             class="buy-box-child"
-            v-for="(item, index) in revision_lits"
+            v-for="(item, index) in merchandise.revision_lits"
             :key="index"
           >
             <div class="title">{{ item.title }}</div>
@@ -51,7 +54,7 @@
         <div class="service-box">
           <div
             class="service-item-box"
-            v-for="(item, index) in service_lits"
+            v-for="(item, index) in merchandise.service_lits"
             :item="item"
             :key="index"
           >
@@ -101,16 +104,17 @@
             <ul>
               <li>
                 <span class="merchandise-name"
-                  >Redmi Note 9 Pro 5G {{ cc }} {{ color }}</span
+                  >Redmi Note 9 Pro 5G {{ merchandise.cc }}
+                  {{ merchandise.color }}</span
                 >
-                <span class="merchandise-rate">{{ price }}元</span>
+                <span class="merchandise-rate">{{ merchandise.price }}元</span>
               </li>
             </ul>
           </div>
 
           <div
             class="merchandise-box"
-            v-for="(item, index) in service_lits"
+            v-for="(item, index) in merchandise.service_lits"
             :key="index"
           >
             <ul v-for="(ite, index) in item.txt" :key="index">
@@ -145,150 +149,155 @@ import SiteFooter from "../../layout/site-footer/site-footer.vue";
 export default {
   data() {
     return {
-      menus: false,
-      title: "Note 9 Pro 5G",
-      price: "",
-      aa: "",
-      bb: "",
-      cc: "",
-      color: "",
-      sale:
-        "「购机享多看阅读免费VIP季卡；赠价值798元双人定制体检卡；1.1-1.4购机得2倍米金；+1元得200G云空间月卡」",
-      desc: `一亿像素夜景相机 / 120Hz六档变速高刷屏 / 国内首发骁龙750G / 6.67"小孔径全面屏 / 立体声双扬声器 / 4820mAh+33W闪充 / 多功能NFC / 线性马达 / 红外遥控 / 全新MIUI 12系统`,
-      img_arr: [
-        {
-          img: require("@/assets/img/phone/phoneItem1.jpg"),
-          // active: true,
-        },
-      ],
-      revision_lits: [
-        {
-          title: "选择版本",
-          clearfix: [
-            {
-              title: "6GB+128GB",
-              active: true,
-              price: "1599",
-            },
-            {
-              title: "8GB+128GB",
-              active: false,
-              price: "1799",
-            },
-            {
-              title: "8GB+256GB",
-              active: false,
-              price: "1999",
-            },
-          ],
-        },
-        {
-          title: "选择颜色",
-          clearfix: [
-            {
-              title: "静默星空",
-              active: true,
-            },
-            {
-              title: "碧海星辰",
-              active: false,
-            },
-            {
-              title: "湖光秋色",
-              active: false,
-            },
-          ],
-        },
-      ],
-      service_lits: [
-        {
-          title: "选择小米提供的意外保护",
-          link_txt: "了解意外保护",
-          txt: [
-            {
-              active: false,
-              titles: "意外保障服务",
-              ts: "1",
-              desc: "手机意外碎屏/进水/碾压等损坏",
-              fuwu: "服务条款",
-              wj: "常见问题",
-              price: "1",
-            },
-            {
-              active: false,
-              titles: "意外保障",
-              ts: "2",
-              desc: "手机意外碎屏/进水等损坏",
-              fuwu: "服务",
-              wj: "常见",
-              price: "2",
-            },
-          ],
-        },
-        {
-          title: "选择小米提供的意外维修",
-          link_txt: "了解意外维修",
-          txt: [
-            {
-              active: false,
-              titles: "意外保障服务",
-              ts: "3",
-              desc: "手机意外碎屏/进水/碾压等损坏",
-              fuwu: "服务条款",
-              wj: "常见问题",
-              price: "3",
-            },
-          ],
-        },
-        {
-          title: "选择小米",
-          link_txt: "了解意外维修",
-          txt: [
-            {
-              active: false,
-              titles: "意服务",
-              ts: "4",
-              desc: "手机意外碎屏/进水/碾压等损坏",
-              fuwu: "服务条款",
-              wj: "常见问题",
-              price: "4",
-            },
-            {
-              active: false,
-              titles: "意外保障服务",
-              ts: "5",
-              desc: "手机意外碎屏/进水/碾压等损坏",
-              fuwu: "服务条款",
-              wj: "常见问题",
-              price: "5",
-            },
-            {
-              active: false,
-              titles: "意外保障服务",
-              ts: "6",
-              desc: "手机意外碎屏/进水/碾压等损坏",
-              fuwu: "服务条款",
-              wj: "常见问题",
-              price: "6",
-            },
-          ],
-        },
-      ],
+    
+      merchandise: {
+        menus: false,
+        title: "Note 9 Pro 5G",
+        price: "",
+        aa: "",
+        bb: "",
+        cc: "",
+        color: "",
+        fgs: 601000,
+        sale:
+          "「购机享多看阅读免费VIP季卡；赠价值798元双人定制体检卡；1.1-1.4购机得2倍米金；+1元得200G云空间月卡」",
+        desc: `一亿像素夜景相机 / 120Hz六档变速高刷屏 / 国内首发骁龙750G / 6.67"小孔径全面屏 / 立体声双扬声器 / 4820mAh+33W闪充 / 多功能NFC / 线性马达 / 红外遥控 / 全新MIUI 12系统`,
+        img_arr: [
+          {
+            img: require("@/assets/img/phone/phoneItem1.jpg"),
+            // active: true,
+          },
+        ],
+        revision_lits: [
+          {
+            title: "选择版本",
+            clearfix: [
+              {
+                title: "6GB+128GB",
+                active: true,
+                price: "1599",
+              },
+              {
+                title: "8GB+128GB",
+                active: false,
+                price: "1799",
+              },
+              {
+                title: "8GB+256GB",
+                active: false,
+                price: "1999",
+              },
+            ],
+          },
+          {
+            title: "选择颜色",
+            clearfix: [
+              {
+                title: "静默星空",
+                active: true,
+              },
+              {
+                title: "碧海星辰",
+                active: false,
+              },
+              {
+                title: "湖光秋色",
+                active: false,
+              },
+            ],
+          },
+        ],
+        service_lits: [
+          {
+            title: "选择小米提供的意外保护",
+            link_txt: "了解意外保护",
+            txt: [
+              {
+                active: false,
+                titles: "意外保障服务",
+                ts: "1",
+                desc: "手机意外碎屏/进水/碾压等损坏",
+                fuwu: "服务条款",
+                wj: "常见问题",
+                price: "1",
+              },
+              {
+                active: false,
+                titles: "意外保障",
+                ts: "2",
+                desc: "手机意外碎屏/进水等损坏",
+                fuwu: "服务",
+                wj: "常见",
+                price: "2",
+              },
+            ],
+          },
+          {
+            title: "选择小米提供的意外维修",
+            link_txt: "了解意外维修",
+            txt: [
+              {
+                active: false,
+                titles: "意外保障服务",
+                ts: "3",
+                desc: "手机意外碎屏/进水/碾压等损坏",
+                fuwu: "服务条款",
+                wj: "常见问题",
+                price: "3",
+              },
+            ],
+          },
+          {
+            title: "选择小米",
+            link_txt: "了解意外维修",
+            txt: [
+              {
+                active: false,
+                titles: "意服务",
+                ts: "4",
+                desc: "手机意外碎屏/进水/碾压等损坏",
+                fuwu: "服务条款",
+                wj: "常见问题",
+                price: "4",
+              },
+              {
+                active: false,
+                titles: "意外保障服务",
+                ts: "5",
+                desc: "手机意外碎屏/进水/碾压等损坏",
+                fuwu: "服务条款",
+                wj: "常见问题",
+                price: "5",
+              },
+              {
+                active: false,
+                titles: "意外保障服务",
+                ts: "6",
+                desc: "手机意外碎屏/进水/碾压等损坏",
+                fuwu: "服务条款",
+                wj: "常见问题",
+                price: "6",
+              },
+            ],
+          },
+        ],
+      },
     };
   },
   mounted() {
+    
     window.addEventListener("scroll", this.menu);
     // this.price = this.revision_lits[0].clearfix[0].price;
 
-    this.revision_lits.forEach((row) => {
+    this.merchandise.revision_lits.forEach((row) => {
       row.clearfix.forEach((ro) => {
         if (ro.active) {
           if (ro.price) {
-            this.price = ro.price;
-            this.aa = Number(this.price);
-            this.cc = ro.title;
+            this.merchandise.price = ro.price;
+            this.merchandise.aa = Number(this.merchandise.price);
+            this.merchandise.cc = ro.title;
           } else {
-            this.color = ro.title;
+            this.merchandise.color = ro.title;
           }
         }
       });
@@ -296,32 +305,32 @@ export default {
   },
   computed: {
     aaa() {
-      return this.aa + this.bb;
+      return this.merchandise.aa + this.merchandise.bb;
     },
   },
   methods: {
     menu() {
       if (document.documentElement.scrollTop >= 140) {
-        this.menus = true;
+        this.merchandise.menus = true;
       } else {
-        this.menus = false;
+        this.merchandise.menus = false;
       }
     },
     revision_change(item, ite) {
       item.clearfix.forEach((row) => (row.active = false));
       ite.active = true;
       if (ite.price) {
-        this.price = ite.price;
-        this.aa = Number(this.price);
-        this.cc = ite.title;
+        this.merchandise.price = ite.price;
+        this.merchandise.aa = Number(this.merchandise.price);
+        this.merchandise.cc = ite.title;
       } else {
-        this.color = ite.title;
+        this.merchandise.color = ite.title;
       }
     },
     choice(item, ite) {
       item.txt.forEach((row) => {
         if (row.active) {
-          this.bb = Number(this.bb) - Number(row.price);
+          this.merchandise.bb = Number(this.merchandise.bb) - Number(row.price);
         }
       });
       if (ite.active) {
@@ -333,11 +342,14 @@ export default {
           row.active = false;
         });
         ite.active = !ite.active;
-        this.bb = Number(this.bb) + Number(ite.price);
+        this.merchandise.bb = Number(this.merchandise.bb) + Number(ite.price);
       }
     },
-    add() {},
+    add() {
+      this.$store.commit("increment", this.merchandise);
+    },
   },
+
   components: { hear, Navs, index, SiteFooter, xmProduct, swiper, addresss },
 };
 </script>
