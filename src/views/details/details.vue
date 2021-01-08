@@ -3,47 +3,12 @@
     <hear></hear>
     <navs></navs>
     <index></index>
-    <div :class="['xm-product-box', menus ? 'menu' : '']">
-      <div class="xm-product">
-        <div class="product-left">
-          <span class="title">{{ title }}</span>
-          <div class="con">
-            <span>|</span>
-            <span class="txt">小米10至尊纪念版</span>
-            <span>|</span>
-            <span class="txt">小米10青春版5G</span>
-          </div>
-        </div>
-        <div class="product-right">
-          <span class="txt">概述</span>
-          <span class="shu">|</span>
-          <span class="txt">F码通道</span>
-          <span class="shu">|</span>
-          <span class="txt">咨询客服</span>
-          <span class="shu">|</span>
-          <span class="txt">用户评价</span>
-        </div>
-      </div>
-    </div>
+    <!-- 顶栏 -->
+    <xmProduct :class="[menus ? 'menu' : '']" :title="title"></xmProduct>
     <div class="product-box">
-      <div
-        class="img-box"
-        :style="{
-          backgroundImage: `url(${img_arr[0].img})`,
-        }"
-      >
-        <!-- <div class="letf-btn"><i class="iconfont icon-zuo1"></i></div>
-        <div class="right-btn">
-          <i class="iconfont icon-mjiantou-copy"></i>
-        </div>
-        <div class="dian-box">
-          <div class="dian"></div>
-          <div class="dian"></div>
-          <div class="dian"></div>
-          <div class="dian"></div>
-          <div class="dian"></div>
-        </div> -->
-      </div>
+      <swiper :img_arr="img_arr"></swiper
+      ><!-- 左边图片 -->
+
       <div class="product-con">
         <div class="top-title">{{ title }}</div>
         <div class="sale-desc">
@@ -53,18 +18,8 @@
         <p class="company-info">小米自营</p>
         <div class="price-info">{{ price }}元</div>
         <div class="line"></div>
-        <div class="address-box">
-          <div class="icon-box"><i class="iconfont icon-sousuo"></i></div>
-          <div class="address-con">
-            <div class="top">
-              <span>广东</span>
-              <span>湛江市</span>
-              <span>雷州市</span>
-              <span class="edit">修改</span>
-            </div>
-            <div class="desc">有现货</div>
-          </div>
-        </div>
+
+        <addresss></addresss>
         <div class="buy-option">
           <div
             class="buy-box-child"
@@ -169,7 +124,7 @@
           <div class="total-price">总计：{{ aaa }}元</div>
         </div>
         <div class="btn-box">
-          <div class="sale-btn">加入购物车</div>
+          <div class="sale-btn" @click="add">加入购物车</div>
           <div class="btn-like">喜欢</div>
         </div>
       </div>
@@ -183,6 +138,9 @@
 import hear from "../../layout/hear/hear.vue";
 import Navs from "../../layout/nav/nav.vue";
 import index from "../../layout/right-nav/index.vue";
+import xmProduct from "./components/xm-product";
+import swiper from "./components/swiper";
+import addresss from "./components/address";
 import SiteFooter from "../../layout/site-footer/site-footer.vue";
 export default {
   data() {
@@ -378,61 +336,13 @@ export default {
         this.bb = Number(this.bb) + Number(ite.price);
       }
     },
+    add() {},
   },
-  components: { hear, Navs, index, SiteFooter },
+  components: { hear, Navs, index, SiteFooter, xmProduct, swiper, addresss },
 };
 </script>
 
 <style lang="less" scoped>
-.xm-product-box {
-  background: #fff;
-  border-top: 1px solid #e0e0e0;
-  border-bottom: 1px solid #e0e0e0;
-  // box-shadow: 0 5px 5px rgba(0, 0, 0, 0.07);i
-  // transition: 0.5;
-  .xm-product {
-    width: 1226px;
-    height: 63px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .product-left {
-      display: flex;
-      align-items: center;
-      .title {
-        font-size: 18px;
-      }
-      .con {
-        font-size: 12px;
-        margin-left: 10px;
-        span {
-          & + span {
-            margin-left: 10px;
-          }
-        }
-        .txt {
-          cursor: pointer;
-          &:hover {
-            color: #ff6700;
-          }
-        }
-      }
-    }
-    .product-right {
-      font-size: 14px;
-      .shu {
-        margin: 0 10px;
-      }
-      .txt {
-        cursor: pointer;
-        &:hover {
-          color: #ff6700;
-        }
-      }
-    }
-  }
-}
 .menu {
   position: fixed;
   top: 0;
@@ -445,68 +355,7 @@ export default {
   padding-top: 32px;
   display: flex;
   justify-content: space-between;
-  .img-box {
-    width: 560px;
-    height: 560px;
-    position: relative;
-    background-position: center;
-    // background-image: url("../../assets/img/details/details1.jpg");
-    background-size: cover;
-    .letf-btn,
-    .right-btn {
-      width: 40px;
-      height: 70px;
-      font-size: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #a9a9ac;
-      cursor: pointer;
-      position: absolute;
-      &:hover {
-        background-color: rgba(112, 88, 56, 0.5);
-        color: #fff;
-      }
-      i {
-        font-size: 40px;
-      }
-    }
-    .letf-btn {
-      left: 0;
-      top: 50%;
-      transform: translatey(-50%);
-    }
-    .right-btn {
-      right: 0;
-      top: 50%;
-      transform: translatey(-50%);
-    }
-    .dian-box {
-      display: flex;
-      position: absolute;
-      right: 50%;
-      transform: translatex(50%);
-      bottom: 25px;
-      .dian {
-        width: 50px;
-        border-radius: 0;
-        border: 0;
-        height: 3px;
-        background: #ccc;
-        cursor: pointer;
-        transition: all 0.1s;
-        & + .dian {
-          margin-left: 5px;
-        }
-        &:hover {
-          background: #a3a3a3;
-        }
-      }
-      .active {
-        background: #a3a3a3;
-      }
-    }
-  }
+
   .product-con {
     width: 600px;
 
@@ -536,30 +385,6 @@ export default {
     .line {
       margin-top: 12px;
       border-bottom: 1px solid #e0e0e0;
-    }
-    .address-box {
-      padding: 30px 50px 30px 20px;
-      margin: 20px 0;
-      background: #fafafa;
-      border: 1px solid #e0e0e0;
-      display: flex;
-      .address-con {
-        margin-left: 20px;
-        .top {
-          span {
-            font-size: 14px;
-            margin-right: 14px;
-          }
-          .edit {
-            color: #ff6700;
-            cursor: pointer;
-          }
-        }
-        .desc {
-          font-size: 14px;
-          color: #ff6700;
-        }
-      }
     }
   }
   .buy-option {
