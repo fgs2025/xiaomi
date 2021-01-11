@@ -348,8 +348,87 @@ export default {
     add() {
       this.$store.commit("increment", this.merchandise);
     },
-  },
-
+  },   
+  // methods:{
+  //       add(item){
+  //           this.$store.dispatch('optionCar',(state)=>{
+  //               let find = state.car.find(row=>row.good_id==item.good_id);
+  //               find.num++
+  //           })
+  //       },
+  //       sub(item){
+  //           this.$store.dispatch('optionCar',(state)=>{
+  //               let find = state.car.find(row=>row.good_id==item.good_id);
+  //               find.num--
+  //           })
+  //       }
+  //   },
+  //   computed:{
+  //       shop_car(){
+  //           return this.$store.getters.getCar
+  //       }
+  //   }    
+//  data(){
+//         return{
+//             classfily:[
+//                 {
+//                     name:'选择版本',
+//                     list:[
+//                         {
+//                             lable:'8G',
+//                             id:1,
+//                             active:false
+//                         },
+//                          {
+//                             lable:'16G',
+//                             id:2,
+//                             active:false
+//                         }
+//                     ]
+//                 },
+//                 {
+//                     name:'选择颜色',
+//                     list:[
+//                         {
+//                             lable:'红色',
+//                             id:3,
+//                             active:false
+//                         },
+//                          {
+//                             lable:'蓝色',
+//                             id:4,
+//                             active:false
+//                         }
+//                     ]
+//                 }
+//             ]
+//         }
+//     },
+//     mounted(){
+//         // console.log()
+//     },
+//     methods:{
+//         to_active(item,ite){
+//             item.list.forEach(el => {
+//                 el.active = false
+//             });
+//             ite.active = true;
+//         },
+//         add_car(){
+//             // console.log(this.$store)
+//             // this.$store.dispatch('pushCar',{
+//             //     num:1,
+//             //     classfily:this.classfily.map(row=>{
+//             //         const find = row.list.find(ro=>ro.active)
+//             //         return find.id
+//             //     }),
+//             //     good_id:this.$route.params.id
+//             // })
+//             axios.get('/api/pc/classify-list').then(res=>{
+//                 console.log(res);
+//             })
+//         }
+//     },
   components: { hear, Navs, index, SiteFooter, xmProduct, swiper, addresss },
 };
 </script>
